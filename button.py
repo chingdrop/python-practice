@@ -19,7 +19,7 @@ class Button:
         p1 = Point(self.xmin, self.ymin)
         p2 = Point(self.xmax, self.ymax)
         self.rect = Rectangle(p1,p2)
-        self.rect.setFill('peachpuff')
+        self.rect.setFill('lightgray')
         self.rect.draw(win)
         self.label = Text(center, label)
         self.label.draw(win)
