@@ -1,22 +1,22 @@
 # dieview.py
 from graphics import *
 class OutcomeView:
-    """ DieView is a widget that displays a graphical representation
-    of a standard six-sided die."""
+    """ Outcome View is a widget that creates a
+        visual interpretation of a win and a lose."""
     
     def __init__(self, win, center, size):
-        """Create a view of a die, e.g.:
-           d1 = GDie(myWin, Point(40,50), 20)
-        creates a die centered at (40,50) having sides
-        of length 20."""
+        """Create a circle for win or an X for lose, e.g.:
+           outcome1 = OutcomeView(myWin, Point(40,50), 20)
+        creates a circle and an ex centered at (40, 50)
+        and with the size of 20."""
 
-        # first define some standard values
+        # Constructs the parameters: colors, dimensions.
         self.win = win            
         self.background = "peachpuff" 
         self.correct = "green"
         self.wrong = "red"
         cx, cy = center.getX(), center.getY()
-        self.csize = size / 2.0   
+        self.csize = size / 2.5   
         lsize = size / 2.0              
 
         # Create the correct or wrong symbols for the outcome of the game
@@ -26,7 +26,7 @@ class OutcomeView:
         
 
     def __makeCorrect(self, x, y):
-        "Internal helper method to draw a pip at (x,y)"
+        "Creates a circle and sets the background to the same color as the card."
         correctOutcome = Circle(Point(x,y), self.csize)
         correctOutcome.setFill(self.background)
         correctOutcome.setOutline(self.background)
@@ -34,6 +34,7 @@ class OutcomeView:
         return correctOutcome
 
     def __makeWrong(self, x1, x2, y1, y2):
+        "Creates an X and sets the background to the card."
         p1 = Point(x1, y1)
         p2 = Point(x2, y2)
         wrongOutcome = Line(p1,p2)
@@ -42,13 +43,13 @@ class OutcomeView:
         return wrongOutcome
 
     def setOutcome(self, value):
-        "Set this die to display value."
-        # turn all pips off
+        "Set the value of the image to color in a green circle or a red X"
+        # defaults the images to the card color. 
         self.correct1.setFill(self.background)
         self.wrong1.setFill(self.background)
         self.wrong2.setFill(self.background)
 
-        # turn correct pips on
+        # changes the image to the correct color.
         if value == 1:
             self.correct1.setFill(self.correct)
         elif value == 2:
