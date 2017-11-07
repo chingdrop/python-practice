@@ -26,6 +26,7 @@ class GameText:
         gameMessage = Text(Point(x,y), "")
         gameMessage.setText("Welcome to Three Card Monte")
         gameMessage.draw(self.win)
+        gameMessage.setTextColor("white")
         return gameMessage
 
     def setCount(self, winCount, loseCount):

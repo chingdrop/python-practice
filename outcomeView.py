@@ -1,7 +1,7 @@
-# dieview.py
+# outcomeView.py
 from graphics import *
 class OutcomeView:
-    """ Outcome View is a widget that creates a
+    """ Outcome View is a custom widget that creates a
         visual interpretation of a win and a lose."""
     
     def __init__(self, win, center, size):
@@ -11,13 +11,13 @@ class OutcomeView:
         and with the size of 20."""
 
         # Constructs the parameters: colors, dimensions.
-        self.win = win            
-        self.background = "peachpuff" 
+        self.win = win
+        self.background = "peachpuff"
         self.correct = "green"
         self.wrong = "red"
         cx, cy = center.getX(), center.getY()
         self.csize = size / 2.5   
-        lsize = size / 2.0              
+        lsize = size / 2.5
 
         # Create the correct or wrong symbols for the outcome of the game
         self.correct1 = self.__makeCorrect(cx, cy)
@@ -32,14 +32,14 @@ class OutcomeView:
         correctOutcome.setOutline(self.background)
         correctOutcome.draw(self.win)
         return correctOutcome
-
+    
     def __makeWrong(self, x1, x2, y1, y2):
         "Creates an X and sets the background to the card."
         p1 = Point(x1, y1)
         p2 = Point(x2, y2)
         wrongOutcome = Line(p1,p2)
-        wrongOutcome.draw(self.win)
         wrongOutcome.setFill(self.background)
+        wrongOutcome.draw(self.win)
         return wrongOutcome
 
     def setOutcome(self, value):
@@ -57,5 +57,5 @@ class OutcomeView:
             self.wrong2.setFill(self.wrong)
         else:
             self.correct1.setFill(self.background)
-            self.wrong1.setFill(self.background)
             self.wrong2.setFill(self.background)
+            self.wrong1.setFill(self.background)

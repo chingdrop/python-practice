@@ -6,7 +6,9 @@ class Button:
     """A button is a labeled rectangle in a window.
     It is activated or deactivated with the activate()
     and deactivate() methods. The clicked(p) method
-    returns true if the button is active and p is inside it."""
+    returns true if the button is active and p is inside it.
+    I copied the button class from the dice roller example,
+    I only changed the background color to peachpuff."""
 
     def __init__(self, win, center, width, height, label):
         """ Creates a rectangular button, eg:
