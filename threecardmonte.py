@@ -2,10 +2,11 @@
 # 2017/11/02
 #threecardmonte.py
 
-from graphics import GraphWin, Point
+from graphics import GraphWin, Point, Text
 from button import Button
 from random import randrange
 from outcomeView import OutcomeView
+from gameText import GameText
 
 def main():
 
@@ -39,69 +40,83 @@ def main():
     outcome2 = OutcomeView(win, Point(350, 175), 140)
     # Draws outcome 3
     outcome3 = OutcomeView(win, Point(525, 175), 140)
+    # Draws the game text
+    message1 = GameText(win, Point(350, 10))
     
     
 
     # Creates a start point for the sentinel loop.
     correct = randrange(1,4)
     pt = win.getMouse()
+    # Displays the welcome message. 
+    message1.setValue(1)
 
     # Continues as long as the quit button isn't pressed.
     while not qb.clicked(pt):
 
-        # Event for Button 1
+        # Selects button 1 and checks if it is correct.
         if cb1.clicked(pt):
             choice = 1
-            # Event for a correct choice
             if choice == correct:
                 winCount = winCount + 1
+                # Displays the green circle and the win text for card 1.
                 outcome1.setOutcome(1)
-                print("you win, keep going or quit")
+                message1.setValue(2)
+                
             else:
                 loseCount = loseCount + 1
+                # Displays the red X and the lose text for card 1.
                 outcome1.setOutcome(2)
-                print("you lose, keep going or quit")
+                message1.setValue(3)
+                
         # Event for Button 2
         elif cb2.clicked(pt):
             choice = 2
             # Second correct event
             if choice == correct:
                 winCount = winCount + 1
+                # Displays the green circle and the win text for card 2.
                 outcome2.setOutcome(1)
-                print("you win, keep going or quit")
+                message1.setValue(2)
+                
             else:
                 loseCount = loseCount + 1
+                # Displays the red X and the lose text for card 2.
                 outcome2.setOutcome(2)
-                print("you lose, keep going or quit")
+                message1.setValue(3)
+                
         # Event for Button 3
         elif cb3.clicked(pt):
             choice = 3
             # Third correct event
             if choice == correct:
                 winCount = winCount + 1
+                # Displays the green circle and the win text for card 3.
                 outcome3.setOutcome(1)
-                print("you win, keep going or quit")
+                message1.setValue(2)
+                
             else:
                 loseCount = loseCount + 1
+                # Displays the red X and the lose text for card 3.
                 outcome3.setOutcome(2)
-                print("you lose, keep going or quit")
+                message1.setValue(3)
                 
-        # Resets loop
+                
+        # Resets loop, and random generator. 
         qb.activate()
         pt = win.getMouse()
         correct = randrange(1,4)
+        # Resets outcome images.
         outcome1.setOutcome(0)
         outcome2.setOutcome(0)
         outcome3.setOutcome(0)
-        
 
     # Converts win and lose count to strings.
-    wMessage = str(winCount)
-    lMessage = str(loseCount)
+    message1.setCount(winCount, loseCount)
 
     # Prints a message displaying wins and loses. 
-    print("you won "+wMessage+" times.")
-    print("you lost "+lMessage+" times.")
+    message1.setValue(4)
+    win.getMouse()
     win.close()
 
 main()
