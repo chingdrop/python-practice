@@ -1,4 +1,3 @@
-# gameText.py
 from graphics import *
 class GameText:
     """ A custom wigdet that displays text. The text can be changed by its value.

@@ -1,4 +1,3 @@
-# button.py
 from graphics import *
 
 class Button:

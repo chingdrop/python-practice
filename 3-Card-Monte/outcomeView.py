@@ -1,4 +1,3 @@
-# dieview.py
 from graphics import *
 class OutcomeView:
     """ Outcome View is a widget that creates a
