@@ -1,8 +1,9 @@
-# Craig Hurely
+# Craig Hurely and Will Dary
 # 2017/11/02
-#threecardmonte.py
+# threecardmonte.py
 
-from graphics import GraphWin, Point, Text
+# List of classes used in game program, make sure all class files are in same folder as game file.
+from graphics import GraphWin, Point, Image
 from button import Button
 from random import randrange
 from outcomeView import OutcomeView
@@ -13,6 +14,10 @@ def main():
     #Create the game view window
     win = GraphWin("GameView", 700, 500)
     win.setBackground("lightblue")
+
+    # Draws the wallpaper image make sure image file is in same folder as game file.
+    image1 = Image(Point(350, 250), "usf1.png")
+    image1.draw(win)
 
     # creates three variables and starts them at zero.
     winCount = 0
@@ -42,8 +47,6 @@ def main():
     outcome3 = OutcomeView(win, Point(525, 175), 140)
     # Draws the game text
     message1 = GameText(win, Point(350, 10))
-    
-    
 
     # Creates a start point for the sentinel loop.
     correct = randrange(1,4)
@@ -111,7 +114,7 @@ def main():
         outcome2.setOutcome(0)
         outcome3.setOutcome(0)
 
-    # Converts win and lose count to strings.
+    # Calls the method in GameText that updates the count of win/lose.
     message1.setCount(winCount, loseCount)
 
     # Prints a message displaying wins and loses. 
@@ -119,4 +122,5 @@ def main():
     win.getMouse()
     win.close()
 
-main()
+if __name__ == "__main__":
+    main()
