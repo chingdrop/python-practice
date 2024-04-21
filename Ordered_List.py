@@ -1,5 +1,5 @@
 class Node:
-    def __init__(self,initdata):
+    def __init__(self, initdata):
         self.data = initdata
         self.next = None
 
@@ -9,10 +9,10 @@ class Node:
     def getNext(self):
         return self.next
 
-    def setData(self,newdata):
+    def setData(self, newdata):
         self.data = newdata
 
-    def setNext(self,newnext):
+    def setNext(self, newnext):
         self.next = newnext
 
 #The base code is from listing 3.21a, then I added some code to create an ordered list.
@@ -27,7 +27,7 @@ class OrderedList:
 
     #Ordered Lists are more precise with their addition of data items. 
     #Ordered Lists require the data objects to be aware of their place in the stack.
-    def add(self,item):
+    def add(self, item):
 
         #previous and stop are variables created to control the iteration in step 1.
         current = self.head
@@ -65,7 +65,7 @@ class OrderedList:
 
     #Ordered lists can be more efficient in the search method.
     #Extra conditions can make the search iteration stop interactively.
-    def search(self,item):
+    def search(self, item):
         current = self.head
         #found and stop are booleans used to control the iteration process.
         found = False
@@ -87,7 +87,7 @@ class OrderedList:
 
         return found
 
-    def remove(self,item):
+    def remove(self, item):
         current = self.head
         previous = None
         found = False
@@ -104,7 +104,7 @@ class OrderedList:
             previous.setNext(current.getNext())
 
     #multCount is a method that counts the occurences of a specified item. 
-    def multCount(self,item):
+    def multCount(self, item):
         #current is assigned to the first object in the list. 
         current = self.head
         #count is assigned to 0. 

@@ -1,12 +1,11 @@
 import random
 
 def main():
-        randomList = []
+    randomList = []
+    for x in range(20):
+        newElement = random.randint(1,101)
+        randomList.append(newElement)
 
-        for x in range(20):
-                newElement = random.randint(1,101)
-                randomList.append(newElement)
-	
-        print(randomList)
+    print(randomList)
 
 main()

@@ -41,7 +41,7 @@ def main():
     # Prints the info message and the lists.
     print("This is the original list with repeating numbers.")
     print(masterList.getMasterList())
-    print("This is the sorted list with only unique numbers. 
+    print("This is the sorted list with only unique numbers.")
     print(uniqueList.getUniqueList())
 
 main()

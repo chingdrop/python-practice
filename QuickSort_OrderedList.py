@@ -34,42 +34,34 @@ def MedianOfThree(alist,first,last):
       # otheriwse the median index is returned. 
       return first if alist[first] < alist[median] else median
 
-
 def partition(alist,first,last,median):
 
-   leftmark = first+1
-   rightmark = last
+    leftmark = first+1
+    rightmark = last
+    pivotvalue = alist[median]
+    done = False
+    while not done:
+        while leftmark <= rightmark and alist[leftmark] <= pivotvalue:
+            leftmark = leftmark + 1
+            print(alist)
 
-   pivotvalue = alist[median]
+        while alist[rightmark] >= pivotvalue and rightmark >= leftmark:
+            rightmark = rightmark -1
+            print(alist)
 
-   done = False
-   while not done:
+        if rightmark < leftmark:
+            done = True
+        else:
+            temp = alist[leftmark]
+            alist[leftmark] = alist[rightmark]
+            alist[rightmark] = temp
+            print(alist)
 
-       while leftmark <= rightmark and \
-               alist[leftmark] <= pivotvalue:
-           leftmark = leftmark + 1
-           print(alist)
+    temp = alist[first]
+    alist[first] = alist[rightmark]
+    alist[rightmark] = temp
 
-       while alist[rightmark] >= pivotvalue and \
-               rightmark >= leftmark:
-           rightmark = rightmark -1
-           print(alist)
-           
-       if rightmark < leftmark:
-           done = True
-       else:
-           temp = alist[leftmark]
-           alist[leftmark] = alist[rightmark]
-           alist[rightmark] = temp
-           print(alist)
-
-   temp = alist[first]
-   alist[first] = alist[rightmark]
-   alist[rightmark] = temp
-
-
-   return rightmark
-
+    return rightmark
 
 alist = [54,26,93,17,77,31,44,55,20]
 quickSort(alist)
