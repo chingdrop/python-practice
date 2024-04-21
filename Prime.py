@@ -38,7 +38,7 @@ def main():
     # and adding the element to the prime list.
     prime = checkPrime(check, n)
     # prints the primeList
-    print("-"*50)
+    print("-" * 50)
     print(prime)
 
 main()

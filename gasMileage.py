@@ -87,7 +87,7 @@ def readfile():
 
     # Gets a file name from the user and opens the file.
     fileName = input("what file is the leg info in? ")
-    legfile = open(fileName,'r')
+    legfile = open(fileName, 'r')
 
     # iterates through the lines in the file to collect the leg info.
     for line in legfile:
