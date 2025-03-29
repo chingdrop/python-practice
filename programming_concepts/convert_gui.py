@@ -26,7 +26,7 @@ def main():
 
     # convert input
     celsius = float(inputText.getText())
-    fahrenheit = 9.0 / 5.0 * celsius + 32
+    fahrenheit = (9.0 / 5.0) * celsius + 32
 
     # display output and change button
     outputText.setText(round(fahrenheit, 2))
@@ -37,4 +37,5 @@ def main():
     win.close()
 
 
-main()
+if __name__ == "__main__":
+    main()
