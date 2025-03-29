@@ -1,6 +1,6 @@
 # File - convert.py
 # Version - 2
-# Chapter 7
+# Latest Version - Chapter 7
 # A program to convert Celsius temps to Fahrenheit.
 # This version issues heat and cold warnings.
 
