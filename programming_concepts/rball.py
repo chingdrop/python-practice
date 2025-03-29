@@ -6,21 +6,23 @@ from random import random
 
 
 def main():
-    printIntro()
-    probA, probB, n = getInputs()
-    winsA, winsB = simNGames(n, probA, probB)
-    printSummary(winsA, winsB)
+    print_intro()
+    prob_a, prob_b, n = get_inputs()
+    wins_a, wins_b = sim_n_games(n, prob_a, prob_b)
+    print_summary(wins_a, wins_b)
 
 
-def printIntro():
-    print("This program simulates a game of racquetball between two")
-    print('players called "A" and "B".  The abilities of each player is')
-    print("indicated by a probability (a number between 0 and 1) that")
-    print("the player wins the point when serving. Player A always")
-    print("has the first serve.")
+def print_intro():
+    print(
+        "This program simulates a game of racquet ball between two players called A and B."
+    )
+    print(
+        "The abilities of each player is indicated by a probability (a number between 0 and 1) that the player wins the point when serving."
+    )
+    print("Player A always has the first serve.")
 
 
-def getInputs():
+def get_inputs():
     # Returns the three simulation parameters
     a = float(input("What is the prob. player A wins a serve? "))
     b = float(input("What is the prob. player B wins a serve? "))
@@ -28,53 +30,51 @@ def getInputs():
     return a, b, n
 
 
-def simNGames(n, probA, probB):
-    # Simulates n games of racquetball between players whose
-    #    abilities are represented by the probability of winning a serve.
+def sim_n_games(n, prob_a, prob_b):
+    # Simulates n games of racquetball between players whosevabilities are represented by the probability of winning a serve.
     # Returns number of wins for A and B
-    winsA = winsB = 0
+    wins_a = wins_b = 0
     for i in range(n):
-        scoreA, scoreB = simOneGame(probA, probB)
-        if scoreA > scoreB:
-            winsA = winsA + 1
+        score_a, score_b = sim_one_game(prob_a, prob_b)
+        if score_a > score_b:
+            wins_a = wins_a + 1
         else:
-            winsB = winsB + 1
-    return winsA, winsB
+            wins_b = wins_b + 1
+    return wins_a, wins_b
 
 
-def simOneGame(probA, probB):
-    # Simulates a single game or racquetball between players whose
-    #    abilities are represented by the probability of winning a serve.
+def sim_one_game(prob_a, prob_b):
+    # Simulates a single game or racquetball between players whose abilities are represented by the probability of winning a serve.
     # Returns final scores for A and B
     serving = "A"
-    scoreA = 0
-    scoreB = 0
-    while not gameOver(scoreA, scoreB):
+    score_a = 0
+    score_b = 0
+    while not game_over(score_a, score_b):
         if serving == "A":
-            if random() < probA:
-                scoreA = scoreA + 1
+            if random() < prob_a:
+                score_a = score_a + 1
             else:
                 serving = "B"
         else:
-            if random() < probB:
-                scoreB = scoreB + 1
+            if random() < prob_b:
+                score_b = score_b + 1
             else:
                 serving = "A"
-    return scoreA, scoreB
+    return score_a, score_b
 
 
-def gameOver(a, b):
+def game_over(a, b):
     # a and b represent scores for a racquetball game
     # Returns True if the game is over, False otherwise.
     return a == 15 or b == 15
 
 
-def printSummary(winsA, winsB):
+def print_summary(wins_a, wins_b):
     # Prints a summary of wins for each player.
-    n = winsA + winsB
-    print("\nGames simulated:", n)
-    print("Wins for A: {0} ({1:0.1%})".format(winsA, winsA / n))
-    print("Wins for B: {0} ({1:0.1%})".format(winsB, winsB / n))
+    n = wins_a + wins_b
+    print(f"\nGames simulated: {n}")
+    print(f"Wins for A: {wins_a} ({wins_a / n:0.1%})")
+    print(f"Wins for A: {wins_b} ({wins_b / n:0.1%})")
 
 
 if __name__ == "__main__":
