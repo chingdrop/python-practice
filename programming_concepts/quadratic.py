@@ -11,17 +11,18 @@ def main():
         a = float(input("Enter coefficient a: "))
         b = float(input("Enter coefficient b: "))
         c = float(input("Enter coefficient c: "))
-        discRoot = math.sqrt(b * b - 4 * a * c)
-        root1 = (-b + discRoot) / (2 * a)
-        root2 = (-b - discRoot) / (2 * a)
-        print("\nThe solutions are:", root1, root2)
-    except ValueError as excObj:
-        if str(excObj) == "math domain error":
+        disc_root = math.sqrt((b * b) - (4 * a * c))
+        root1 = (-b + disc_root) / (2 * a)
+        root2 = (-b - disc_root) / (2 * a)
+        print(f"\nThe solutions are: {root1}, {root2}")
+    except ValueError as e:
+        if str(e) == "math domain error":
             print("No Real Roots")
         else:
             print("Invalid coefficient given")
     except:
-        print("\nSomething went wrong, sorry!")
+        print(f"\nUnexpected Error: {e}")
 
 
-main()
+if __name__ == "__main__":
+    main()
