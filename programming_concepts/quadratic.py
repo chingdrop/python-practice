@@ -1,7 +1,8 @@
 # quadratic.py
 # Version 6
 # Latest Version - Chapter 7
-import math 
+import math
+
 
 def main():
     print("This program finds the real solutions to a quadratic\n")
@@ -13,7 +14,7 @@ def main():
         discRoot = math.sqrt(b * b - 4 * a * c)
         root1 = (-b + discRoot) / (2 * a)
         root2 = (-b - discRoot) / (2 * a)
-        print("\nThe solutions are:", root1, root2 )
+        print("\nThe solutions are:", root1, root2)
     except ValueError as excObj:
         if str(excObj) == "math domain error":
             print("No Real Roots")
@@ -21,5 +22,6 @@ def main():
             print("Invalid coefficient given")
     except:
         print("\nSomething went wrong, sorry!")
+
 
 main()
