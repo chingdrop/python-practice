@@ -7,15 +7,16 @@ def main():
     n = int(input("How many numbers are there? "))
 
     # Set max to be the first value
-    max = float(input("Enter a number >> "))
+    maxn = float(input("Enter a number: "))
 
     # Now compare the n-1 successive values
     for i in range(n - 1):
-        x = float(input("Enter a number >> "))
-        if x > max:
-            max = x
+        x = float(input("Enter a number: "))
+        if x > maxn:
+            maxn = x
 
-    print("The largest value is", max)
+    print(f"The largest value is {maxn}")
 
 
-main()
+if __name__ == "__main__":
+    main()
