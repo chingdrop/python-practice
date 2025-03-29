@@ -22,7 +22,8 @@ def main():
     ]
 
     n = int(input("Enter a month number (1-12): "))
-    print("The month abbreviation is", months[n - 1] + ".")
+    print(f"The month abbreviation is {months[n - 1]}.")
 
 
-main()
+if __name__ == "__main__":
+    main()
