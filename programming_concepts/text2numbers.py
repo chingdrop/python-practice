@@ -2,10 +2,11 @@
 # Latest Version - Chapter 5
 # A program to convert a textual message into a sequence of numbers, utilizing the underlying Unicode encoding.
 
+
 def main():
     print("This program converts a textual message into a sequence")
     print("of numbers representing the Unicode encoding of the message.\n")
-    
+
     # Get the message to encode
     message = input("Please enter the message to encode: ")
 
@@ -14,7 +15,8 @@ def main():
     # Loop through the message and print out the Unicode values
     for ch in message:
         print(ord(ch), end=" ")
-        
-    print() # End line of output
+
+    print()  # End line of output
+
 
 main()
