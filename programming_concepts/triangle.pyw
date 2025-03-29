@@ -36,11 +36,12 @@ def main():
 
     # Calculate the perimeter of the triangle
     perim = distance(p1, p2) + distance(p2, p3) + distance(p3, p1)
-    message.setText("The perimeter is: {0:0.2f}".format(perim))
+    message.setText(f"The perimeter is: {perim:0.2f}")
 
     # Wait for another click to exit
     win.getMouse()
     win.close()
 
 
-main()
+if __name__ == "__main__":
+    main()
