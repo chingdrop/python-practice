@@ -5,9 +5,10 @@
 
 def main():
     fname = input("Enter filename: ")
-    infile = open(fname, "r")
-    data = infile.read()
-    print(data)
+    with open(fname, "r") as file:
+        data = file.read()
+        print(data)
 
 
-main()
+if __name__ == "__main__":
+    main()
