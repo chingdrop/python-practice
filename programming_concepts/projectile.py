@@ -3,11 +3,11 @@
 """
 Provides a simple class for modeling the flight of projectiles.
 """
-   
+
 from math import sin, cos, radians
 
-class Projectile:
 
+class Projectile:
     """Simulates the flight of simple projectiles near the earth's
     surface, ignoring wind resistance. Tracking is done in two
     dimensions, height (y) and distance (x)."""
