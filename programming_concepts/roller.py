@@ -1,13 +1,14 @@
 # roller.py
 # Latest Version - Chapter 10
-# Graphics program to roll a pair of dice. 
+# Graphics program to roll a pair of dice.
 # Uses custom widgets Button and DieView.
 
 from random import randrange
 from graphics import GraphWin, Point
 
 from button import Button
-from dieview import DieView 
+from dieview import DieView
+
 
 def main():
 
@@ -17,24 +18,25 @@ def main():
     win.setBackground("green2")
 
     # Draw the interface widgets
-    die1 = DieView(win, Point(3,7), 2)
-    die2 = DieView(win, Point(7,7), 2)
-    rollButton = Button(win, Point(5,4.5), 6, 1, "Roll Dice")
+    die1 = DieView(win, Point(3, 7), 2)
+    die2 = DieView(win, Point(7, 7), 2)
+    rollButton = Button(win, Point(5, 4.5), 6, 1, "Roll Dice")
     rollButton.activate()
-    quitButton = Button(win, Point(5,1), 2, 1, "Quit")
+    quitButton = Button(win, Point(5, 1), 2, 1, "Quit")
 
     # Event loop
     pt = win.getMouse()
     while not quitButton.clicked(pt):
         if rollButton.clicked(pt):
-            value1 = randrange(1,7)
+            value1 = randrange(1, 7)
             die1.setValue(value1)
-            value2 = randrange(1,7)
+            value2 = randrange(1, 7)
             die2.setValue(value2)
             quitButton.activate()
         pt = win.getMouse()
 
     # close up shop
     win.close()
+
 
 main()
