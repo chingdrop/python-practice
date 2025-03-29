@@ -4,8 +4,9 @@
 
 
 def main():
-    print("This program converts a textual message into a sequence")
-    print("of numbers representing the Unicode encoding of the message.\n")
+    print(
+        "This program converts a textual message into a sequence of numbers representing the Unicode encoding of the message.\n"
+    )
 
     # Get the message to encode
     message = input("Please enter the message to encode: ")
@@ -19,4 +20,5 @@ def main():
     print()  # End line of output
 
 
-main()
+if __name__ == "__main__":
+    main()
