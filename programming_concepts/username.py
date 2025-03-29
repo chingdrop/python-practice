@@ -14,7 +14,8 @@ def main():
     uname = first[0] + last[:7]
 
     # output the username
-    print("Your username is:", uname)
+    print(f"Your username is: {uname}")
 
 
-main()
+if __name__ == "__main__":
+    main()
