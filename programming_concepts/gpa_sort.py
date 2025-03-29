@@ -4,8 +4,9 @@
 
 from gpa import Student, makeStudent
 
+
 def readStudents(filename):
-    infile = open(filename, 'r')
+    infile = open(filename, "r")
     students = []
     for line in infile:
         students.append(makeStudent(line))
@@ -14,12 +15,14 @@ def readStudents(filename):
 
 
 def writeStudents(students, filename):
-    outfile = open(filename, 'w')
+    outfile = open(filename, "w")
     for s in students:
-        print("{0}\t{1}\t{2}".format(s.getName(), s.getHours(), s.getQPoints()), 
-              file=outfile)
+        print(
+            "{0}\t{1}\t{2}".format(s.getName(), s.getHours(), s.getQPoints()),
+            file=outfile,
+        )
     outfile.close()
-                      
+
 
 def main():
     print("This program sorts student grade information by GPA")
@@ -30,5 +33,6 @@ def main():
     writeStudents(data, filename)
     print("The data has been written to", filename)
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     main()

@@ -2,6 +2,7 @@
 # Latest Version - Chapter 11
 # Program to find student with highest GPA
 
+
 class Student:
 
     def __init__(self, name, hours, qpoints):
@@ -19,7 +20,8 @@ class Student:
         return self.qpoints
 
     def gpa(self):
-        return self.qpoints/self.hours
+        return self.qpoints / self.hours
+
 
 def makeStudent(infoStr):
     # infoStr is a tab-separated line: name hours qpoints
@@ -27,10 +29,11 @@ def makeStudent(infoStr):
     name, hours, qpoints = infoStr.split("\t")
     return Student(name, hours, qpoints)
 
+
 def main():
     # open the input file for reading
     filename = input("Enter name the grade file: ")
-    infile = open(filename, 'r')
+    infile = open(filename, "r")
 
     # set best to the record for the first student in the file
     best = makeStudent(infile.readline())
@@ -50,5 +53,6 @@ def main():
     print("hours:", best.getHours())
     print("GPA:", best.gpa())
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     main()

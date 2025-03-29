@@ -1,8 +1,10 @@
 # File - word_freq.py
 # Latest Version - Chapter 11
 
+
 def byFreq(pair):
     return pair[1]
+
 
 def main():
     print("This program analyzes word frequency in a file")
@@ -10,16 +12,16 @@ def main():
 
     # get the sequence of words from the file
     fname = input("File to analyze: ")
-    text = open(fname,'r').read()
+    text = open(fname, "r").read()
     text = text.lower()
     for ch in '!"#$%&()*+,-./:;<=>?@[\\]^_`{|}~':
-        text = text.replace(ch, ' ')
+        text = text.replace(ch, " ")
     words = text.split()
 
     # construct a dictionary of word counts
     counts = {}
     for w in words:
-        counts[w] = counts.get(w,0) + 1
+        counts[w] = counts.get(w, 0) + 1
 
     # output analysis of n most frequent words.
     n = int(input("Output analysis of how many words? "))
@@ -30,4 +32,6 @@ def main():
         word, count = items[i]
         print("{0:<15}{1:>5}".format(word, count))
 
-if __name__ == '__main__':  main()
+
+if __name__ == "__main__":
+    main()

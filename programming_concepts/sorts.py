@@ -2,14 +2,16 @@
 # Latest Version - Chapter 13
 # Implementations of selection sort and merge sort.
 
+
 def selSort(lst):
     n = len(lst)
-    for bottom in range(n-1):
+    for bottom in range(n - 1):
         mp = bottom
-        for i in range(bottom+1,n):
+        for i in range(bottom + 1, n):
             if lst[i] < lst[mp]:
                 mp = i
         lst[bottom], lst[mp] = lst[mp], lst[bottom]
+
 
 def merge(lst1, lst2, lst3):
     # merge sorted lists lst1 and lst2 into lst3
@@ -19,17 +21,17 @@ def merge(lst1, lst2, lst3):
 
     # Loop while both pieces have data
     while i1 < n1 and i2 < n2:
-        if lst1[i1] < lst2[i2]:     # copy from lst1
-            lst3[i3] = lst1[i1]     
+        if lst1[i1] < lst2[i2]:  # copy from lst1
+            lst3[i3] = lst1[i1]
             i1 = i1 + 1
-        else:                       # copy from list2
-            lst3[i3] = lst2[i2]     
+        else:  # copy from list2
+            lst3[i3] = lst2[i2]
             i2 = i2 + 1
-        i3 = i3 + 1                 # item added to lst3
+        i3 = i3 + 1  # item added to lst3
 
     # Here either lst1 or lst2 is done, One of the following loops will
     # execute to finish up the merge.
-    
+
     # Copy remaining items (if any) from lst1
     while i1 < len(lst1):
         lst3[i3] = lst1[i1]
@@ -40,6 +42,7 @@ def merge(lst1, lst2, lst3):
         lst3[i3] = lst2[i2]
         i2 = i2 + 1
         i3 = i3 + 1
+
 
 def mergeSort(lst):
     # Put items of lst in ascending order
@@ -57,7 +60,7 @@ def mergeSort(lst):
 
 
 ## Functions for timing sorts
-        
+
 ## Example:
 ## >>> from sorts import *
 ## >>> timingCurve(mergeSort, 1000, 2000, 5000, 5)
@@ -79,12 +82,14 @@ def mergeSort(lst):
 
 import random, time
 
+
 def genList(n):
     # RETURNS a list of n random floats
     xs = []
     for i in range(n):
         xs.append(random.random())
     return xs
+
 
 def timeSort(sortFn, n):
     # RETURNS the time it takes to sort a random list of size n
@@ -95,6 +100,7 @@ def timeSort(sortFn, n):
     t2 = time.time()
     return t2 - t1
 
+
 def timingCurve(sortFn, start, inc, stop, trials):
     # RETURNS a list representing the average time required to sort
     #     lists of sizes start, start+inc, start+2*inc, ..., stop.
@@ -104,9 +110,8 @@ def timingCurve(sortFn, start, inc, stop, trials):
         sum = 0.0
         for i in range(trials):
             print(i)
-            sum = sum + timeSort(sortFn,n)
+            sum = sum + timeSort(sortFn, n)
         avg = sum / trials
         print("avg = {0:0.1f}".format(avg))
         times.append(avg)
     return times
-
