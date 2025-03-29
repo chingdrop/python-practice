@@ -2,8 +2,9 @@
 # 2017/07/10
 # sentence.py
 
+
 def main():
-    # Instructions to initialize the program. 
+    # Instructions to initialize the program.
     print("This program counts how many words are in a sentence.")
     print("This program also displays the input sentence. \n")
 
@@ -15,7 +16,7 @@ def main():
     count = sentence.count(" ") + 1
 
     # The first condition checks to see if there is a period in the sentence
-    # and then prints both the sentence and the count of words. 
+    # and then prints both the sentence and the count of words.
     if "." in sentence:
         print(count)
         print(sentence)
@@ -25,10 +26,11 @@ def main():
     elif "?" in sentence:
         print(count)
         print(sentence)
-        
+
     # This prints an error message if the sentnece
-    # does not have a period or question mark. 
+    # does not have a period or question mark.
     else:
         print("Please end the sentence with a period or question mark.")
-        
+
+
 main()

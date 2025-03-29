@@ -2,13 +2,15 @@
 # 2017/1/12
 # Prime.py
 
+
 def makeCheckList(n):
     # This method creates a list and fills it with numbers starting with 2
     # and ending with the limit.
     checkList = []
-    for i in range(2, n+1):
+    for i in range(2, n + 1):
         checkList.append(i)
     return checkList
+
 
 def checkPrime(checkList, n):
     primeList = []
@@ -19,13 +21,14 @@ def checkPrime(checkList, n):
         primeList.append(num)
         # Determines multiples using a for loop.
         # starts at the current element and ends at the limit in steps of num
-        for j in range(num, n+1, num):
+        for j in range(num, n + 1, num):
             # Checks to see if the multiple is in the check List.
             # Removes the multiple from check list.
             if j in checkList:
                 checkList.remove(j)
     return primeList
-            
+
+
 def main():
 
     print("This program determines all prime numbers between 2 and the input limit.")
@@ -40,5 +43,6 @@ def main():
     # prints the primeList
     print("-" * 50)
     print(prime)
+
 
 main()

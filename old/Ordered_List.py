@@ -15,8 +15,9 @@ class Node:
     def setNext(self, newnext):
         self.next = newnext
 
-#The base code is from listing 3.21a, then I added some code to create an ordered list.
-#The textbook helped me in making an ordered list class.
+
+# The base code is from listing 3.21a, then I added some code to create an ordered list.
+# The textbook helped me in making an ordered list class.
 class OrderedList:
 
     def __init__(self):
@@ -25,17 +26,17 @@ class OrderedList:
     def isEmpty(self):
         return self.head == None
 
-    #Ordered Lists are more precise with their addition of data items. 
-    #Ordered Lists require the data objects to be aware of their place in the stack.
+    # Ordered Lists are more precise with their addition of data items.
+    # Ordered Lists require the data objects to be aware of their place in the stack.
     def add(self, item):
 
-        #previous and stop are variables created to control the iteration in step 1.
+        # previous and stop are variables created to control the iteration in step 1.
         current = self.head
         previous = None
         stop = False
 
-        #Step 1 iterates through the list looking for the correct place to add the item.
-        #The goal is to search for a greater item and set the previous variable. 
+        # Step 1 iterates through the list looking for the correct place to add the item.
+        # The goal is to search for a greater item and set the previous variable.
         while current != None and not stop:
             if current.getData() > item:
                 stop = True
@@ -43,9 +44,9 @@ class OrderedList:
                 previous = current
                 current = current.getNext()
 
-        #Step 2 two decisions are made whether there is a previous object in the list.
-        #If there is no previous object then temp creates a new object and assigns it to the beginning of the list. 
-        #If there is a previous object then temp updates previous and creates a new object
+        # Step 2 two decisions are made whether there is a previous object in the list.
+        # If there is no previous object then temp creates a new object and assigns it to the beginning of the list.
+        # If there is a previous object then temp updates previous and creates a new object
         temp = Node(item)
         if previous == None:
             temp.setNext(self.head)
@@ -63,16 +64,16 @@ class OrderedList:
 
         return count
 
-    #Ordered lists can be more efficient in the search method.
-    #Extra conditions can make the search iteration stop interactively.
+    # Ordered lists can be more efficient in the search method.
+    # Extra conditions can make the search iteration stop interactively.
     def search(self, item):
         current = self.head
-        #found and stop are booleans used to control the iteration process.
+        # found and stop are booleans used to control the iteration process.
         found = False
         stop = False
 
-        #The iteration will continue through the list until the object is found.
-        #The iteration will also stop if the data object exceeds the search item. 
+        # The iteration will continue through the list until the object is found.
+        # The iteration will also stop if the data object exceeds the search item.
         while current != None and not found and not stop:
             if current.getData() == item:
                 found = True
@@ -103,27 +104,28 @@ class OrderedList:
         else:
             previous.setNext(current.getNext())
 
-    #multCount is a method that counts the occurences of a specified item. 
+    # multCount is a method that counts the occurences of a specified item.
     def multCount(self, item):
-        #current is assigned to the first object in the list. 
+        # current is assigned to the first object in the list.
         current = self.head
-        #count is assigned to 0. 
+        # count is assigned to 0.
         count = 0
 
-        #while loop statement iterates through the entire list.
+        # while loop statement iterates through the entire list.
         while current != None:
-            #Count increases when there is a match between the current list object and the item.
+            # Count increases when there is a match between the current list object and the item.
             if current.getData() == item:
                 count = count + 1
-            
+
             current = current.getNext()
-        #returns the number of occurences recorded. 
+        # returns the number of occurences recorded.
         return count
-                
+
+
 mylist = OrderedList()
 
-#The list provided in the assignment is added in random order.
-#This is done to show that the list can order random data. 
+# The list provided in the assignment is added in random order.
+# This is done to show that the list can order random data.
 mylist.add(31)
 mylist.add(23)
 mylist.add(18)
@@ -139,16 +141,16 @@ mylist.add(23)
 mylist.add(2)
 mylist.add(25)
 
-#print statement showing the size of the list. 
+# print statement showing the size of the list.
 print("Size of the list.")
 print(mylist.size())
 
-#print statement showing the search results of the list. 
+# print statement showing the search results of the list.
 print("Search results for 23 and 35.")
 print(mylist.search(23))
 print(mylist.search(35))
 
-#print statement showing the occurence results of the list.
+# print statement showing the occurence results of the list.
 print("Multiple entry count for 23 and 35.")
 print(mylist.multCount(23))
 print(mylist.multCount(35))
