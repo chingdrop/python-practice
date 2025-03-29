@@ -1,6 +1,7 @@
 # File - username.py
 # Latest Version - Chapter 5
-# Simple string processing program to generate usernames. 
+# Simple string processing program to generate usernames.
+
 
 def main():
     print("This program generates computer usernames.\n")
@@ -14,5 +15,6 @@ def main():
 
     # output the username
     print("Your username is:", uname)
+
 
 main()
