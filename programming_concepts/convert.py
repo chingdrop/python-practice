@@ -7,8 +7,8 @@
 
 def main():
     celsius = float(input("What is the Celsius temperature? "))
-    fahrenheit = 9 / 5 * celsius + 32
-    print("The temperature is", fahrenheit, "degrees Fahrenheit.")
+    fahrenheit = (9 / 5) * celsius + 32
+    print(f"The temperature is {fahrenheit} degrees Fahrenheit.")
 
     # Print warnings for extreme temps
     if fahrenheit > 90:
@@ -17,4 +17,5 @@ def main():
         print("Brrrrr. Be sure to dress warmly!")
 
 
-main()
+if __name__ == "__main__":
+    main()
