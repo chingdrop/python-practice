@@ -2,7 +2,7 @@
 # Latest Version - Chapter 4
 # Graphics program illustrating mouse and keypress inputs
 
-from graphics import *
+from programming_concepts.graphics import *
 
 
 def main():

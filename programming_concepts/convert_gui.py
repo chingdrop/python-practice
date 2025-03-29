@@ -2,7 +2,7 @@
 # Latest Version - Chapter 4
 # Program to convert Celsius to Fahrenheit using a simple graphical interface.
 
-from graphics import *
+from programming_concepts.graphics import *
 
 
 def main():

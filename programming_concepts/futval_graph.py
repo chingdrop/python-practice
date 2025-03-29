@@ -2,7 +2,7 @@
 # Version 5
 # Latest Version - Chapter 6
 
-from graphics import *
+from programming_concepts.graphics import *
 
 
 def createLabeledWindow():

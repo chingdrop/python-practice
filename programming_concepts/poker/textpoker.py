@@ -1,7 +1,7 @@
 # File - textpoker.py
 # Latest Version - Chapter 12
 
-from pokerapp import PokerApp
+from programming_concepts.poker.pokerapp import PokerApp
 
 class TextInterface:
 

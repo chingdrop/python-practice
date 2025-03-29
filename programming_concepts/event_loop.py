@@ -3,7 +3,7 @@
 # Latest Version - Chapter 8
 # Color changing window with clicks to enter text
 
-from graphics import *
+from programming_concepts.graphics import *
 
 
 def handleKey(k, win):

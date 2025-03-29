@@ -1,10 +1,10 @@
 # File - guipoker.py
 # Latest Version - Chapter 12
 
-from graphics import *
-from pokerapp import PokerApp
-from button import Button
-from cdieview import ColorDieView
+from programming_concepts.graphics import *
+from programming_concepts.poker.pokerapp import PokerApp
+from programming_concepts.button import Button
+from programming_concepts.cdieview import ColorDieView
 
 class GraphicsInterface:
 

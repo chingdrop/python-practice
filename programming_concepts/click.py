@@ -1,6 +1,6 @@
 # File - click.py
 # Latest Version - Chapter 4
-from graphics import *
+from programming_concepts.graphics import *
 
 
 def main():

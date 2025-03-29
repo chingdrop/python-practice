@@ -3,10 +3,9 @@
 # Latest Version - Chapter 11
 # Multiple-shot cannonball animation
 
-from math import sqrt, sin, cos, radians, degrees
-from graphics import *
-from projectile import Projectile
-from button import Button
+from math import sin, cos, radians, degrees
+from programming_concepts.graphics import *
+from programming_concepts.projectile import Projectile
 
 
 class Launcher:

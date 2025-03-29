@@ -1,5 +1,5 @@
 # dieview2.py
-from graphics import *
+from programming_concepts.graphics import *
 
 
 class DieView:

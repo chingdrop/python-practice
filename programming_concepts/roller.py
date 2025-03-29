@@ -4,10 +4,10 @@
 # Uses custom widgets Button and DieView.
 
 from random import randrange
-from graphics import GraphWin, Point
 
-from button import Button
-from dieview import DieView
+from programming_concepts.graphics import GraphWin, Point
+from programming_concepts.button import Button
+from programming_concepts.dieview import DieView
 
 
 def main():

@@ -2,7 +2,7 @@
 # Version 2
 # Latest Version - Chapter 6
 import math
-from graphics import *
+from programming_concepts.graphics import *
 
 
 def square(x):
