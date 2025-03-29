@@ -30,13 +30,13 @@ class DieView:
 
         # Create 7 circles for standard pip locations
         self.pips = [
-            self.__makePip(cx - offset, cy - offset),
-            self.__makePip(cx - offset, cy),
-            self.__makePip(cx - offset, cy + offset),
-            self.__makePip(cx, cy),
-            self.__makePip(cx + offset, cy - offset),
-            self.__makePip(cx + offset, cy),
-            self.__makePip(cx + offset, cy + offset),
+            self.__make_pip(cx - offset, cy - offset),
+            self.__make_pip(cx - offset, cy),
+            self.__make_pip(cx - offset, cy + offset),
+            self.__make_pip(cx, cy),
+            self.__make_pip(cx + offset, cy - offset),
+            self.__make_pip(cx + offset, cy),
+            self.__make_pip(cx + offset, cy + offset),
         ]
 
         # Create a table for which pips are on for each value
@@ -50,9 +50,9 @@ class DieView:
             [0, 1, 2, 4, 5, 6],
         ]
 
-        self.setValue(1)
+        self.set_value(1)
 
-    def __makePip(self, x, y):
+    def __make_pip(self, x, y):
         """Internal helper method to draw a pip at (x,y)"""
         pip = Circle(Point(x, y), self.psize)
         pip.setFill(self.background)
@@ -60,7 +60,7 @@ class DieView:
         pip.draw(self.win)
         return pip
 
-    def setValue(self, value):
+    def set_value(self, value):
         """Set this die to display value."""
         # Turn all the pips off
         for pip in self.pips:

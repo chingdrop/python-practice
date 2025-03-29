@@ -33,7 +33,7 @@ class Button:
             and self.ymin <= p.getY() <= self.ymax
         )
 
-    def getLabel(self):
+    def get_label(self):
         "Returns the label string of this button."
         return self.label.getText()
 
