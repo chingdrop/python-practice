@@ -60,9 +60,9 @@ Programming: An Introduction to Computer Science" by John Zelle,
 published by Franklin, Beedle & Associates.  Also see
 http://mcsp.wartburg.edu/zelle/python for a quick reference"""
 
-__version__ = "5.0beta"
+__version__ = "5.0"
 
-# Version 5
+# Version 5 8/26/2016
 #     * update at bottom to fix MacOS issue causing askopenfile() to hang
 #     * update takes an optional parameter specifying update rate
 #     * Entry objects get focus when drawn
@@ -162,10 +162,8 @@ __version__ = "5.0beta"
 
 import time, os, sys
 
-try:  # import as appropriate for 2.x vs. 3.x
-   import tkinter as tk
-except:
-   import Tkinter as tk
+# Always import Python 3.X
+import tkinter as tk
 
 
 ##########################################################################
