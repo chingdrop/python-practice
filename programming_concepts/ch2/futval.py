@@ -1,5 +1,10 @@
-def futval():
-    print("This program calculates the future value of a 10-year investment.")
+# futval.py
+#    A program to compute the value of an investment
+#    carried 10 years into the future
+
+def main():
+    print("This program calculates the future value")
+    print("of a 10-year investment.")
 
     principal = eval(input("Enter the initial principal: "))
     apr = eval(input("Enter the annual interest rate: "))
@@ -9,5 +14,4 @@ def futval():
 
     print("The value in 10 years is:", principal)
 
-if __name__ == "__main__":
-    futval()
+main()
