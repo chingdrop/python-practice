@@ -1,9 +1,10 @@
 # File - event_loop.py
 # Version 3
-# Latest Version - Chapter 8 
+# Latest Version - Chapter 8
 # Color changing window with clicks to enter text
 
 from graphics import *
+
 
 def handleKey(k, win):
     if k == "r":
@@ -15,12 +16,12 @@ def handleKey(k, win):
     elif k == "b":
         win.setBackground("lightblue")
 
-        
+
 def handleClick(pt, win):
     # create an Entry for user to type in
     entry = Entry(pt, 10)
     entry.draw(win)
-    
+
     # Go modal: wait until user types Return or Escape Key
     while True:
         key = win.getKey()
@@ -32,9 +33,9 @@ def handleClick(pt, win):
     Text(pt, entry.getText()).draw(win)
 
     # clear (ignore) any mouse click that occurred during text entry
-    win.checkMouse() 
-    
-    
+    win.checkMouse()
+
+
 def main():
     win = GraphWin("Click and Type", 500, 500)
 
@@ -44,7 +45,7 @@ def main():
         key = win.checkKey()
         if key == "q":  # loop exit
             break
-        
+
         if key:
             handleKey(key, win)
 
@@ -53,6 +54,6 @@ def main():
             handleClick(pt, win)
 
     win.close()
-    
+
+
 main()
-            
