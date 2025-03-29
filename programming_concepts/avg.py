@@ -1,4 +1,4 @@
-def avg2():
+def avg():
     print("This program computes the average of two exam scores.")
 
     score1, score2 = eval(input("Enter two scores separated by a comma: "))
@@ -7,4 +7,4 @@ def avg2():
     print("The average of the scores is:", average)
 
 if __name__ == "__main__":
-    avg2()
+    avg()
