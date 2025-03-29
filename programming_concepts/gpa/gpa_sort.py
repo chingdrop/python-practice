@@ -2,7 +2,7 @@
 # Latest Version - Chapter 11
 # A program to sort student information into GPA order.
 
-from gpa import Student, makeStudent
+from programming_concepts.gpa.gpa import Student, makeStudent
 
 
 def readStudents(filename):
