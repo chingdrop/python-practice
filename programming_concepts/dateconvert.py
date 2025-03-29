@@ -10,7 +10,7 @@ def main():
     month = int(input("Enter the month number: "))
     year = int(input("Enter the year: "))
 
-    date1 = str(month) + "/" + str(day) + "/" + str(year)
+    date1 = f"{str(month)} / {str(day) / {str(year)}}"
 
     months = [
         "January",
@@ -26,10 +26,11 @@ def main():
         "November",
         "December",
     ]
-    monthStr = months[month - 1]
-    date2 = monthStr + " " + str(day) + ", " + str(year)
+    month_str = months[month - 1]
+    date2 = f"{month_str} {str(day)}, {str(year)}"
 
-    print("The date is", date1, "or", date2 + ".")
+    print(f"The date is: {date1} or {date2}.")
 
 
-main()
+if __name__ == "__main__":
+    main()
