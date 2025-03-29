@@ -1,5 +1,5 @@
 # button.py
-from programming_concepts.graphics import *
+from programming_concepts.classes.graphics import *
 
 
 class Button:

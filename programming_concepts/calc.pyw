@@ -3,8 +3,8 @@
 # A four function calculator using Python arithmetic.
 # Illustrates use of objects and lists to build a simple GUI.
 
-from programming_concepts.graphics import *
-from programming_concepts.button import Button
+from programming_concepts.classes.graphics import *
+from programming_concepts.classes.button import Button
 
 
 class Calculator:

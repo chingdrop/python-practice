@@ -1,7 +1,7 @@
 # File - pokerapp.py
 # Latest Version - Chapter 12
 
-from programming_concepts.dice import Dice
+from programming_concepts.classes.dice import Dice
 
 class PokerApp:
 
