@@ -29,10 +29,10 @@ class Projectile:
         self.ypos = self.ypos + time * (self.yvel + yvel1) / 2.0
         self.yvel = yvel1
 
-    def getY(self):
+    def get_y(self):
         "Returns the y position (height) of this projectile."
         return self.ypos
 
-    def getX(self):
+    def get_x(self):
         "Returns the x position (distance) of this projectile."
         return self.xpos

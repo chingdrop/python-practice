@@ -2,10 +2,10 @@
 # Version 4
 # Latest Version - Chapter 10
 
-from programming_concepts.projectile import Projectile
+from programming_concepts.classes.projectile import Projectile
 
 
-def getInputs():
+def get_inputs():
     a = float(input("Enter the launch angle (in degrees): "))
     v = float(input("Enter the initial velocity (in meters/sec): "))
     h = float(input("Enter the initial height (in meters): "))
@@ -14,11 +14,11 @@ def getInputs():
 
 
 def main():
-    angle, vel, h0, time = getInputs()
+    angle, vel, h0, time = get_inputs()
     cball = Projectile(angle, vel, h0)
-    while cball.getY() >= 0:
+    while cball.get_y() >= 0:
         cball.update(time)
-    print("\nDistance traveled: {0:0.1f} meters.".format(cball.getX()))
+    print("\nDistance traveled: {0:0.1f} meters.".format(cball.get_x()))
 
 
 if __name__ == "__main__":

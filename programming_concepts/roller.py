@@ -29,9 +29,9 @@ def main():
     while not quitButton.clicked(pt):
         if rollButton.clicked(pt):
             value1 = randrange(1, 7)
-            die1.setValue(value1)
+            die1.set_value(value1)
             value2 = randrange(1, 7)
-            die2.setValue(value2)
+            die2.set_value(value2)
             quitButton.activate()
         pt = win.getMouse()
 
