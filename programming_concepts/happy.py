@@ -9,7 +9,7 @@ def happy():
 
 
 def verseFor(person):
-    lyrics = happy() * 2 + "Happy birthday, dear " + person + ".\n" + happy()
+    lyrics = f"{happy() * 2} Happy birthday, dear {person}.\n{happy()}"
     return lyrics
 
 
@@ -18,4 +18,5 @@ def main():
         print(verseFor(person))
 
 
-main()
+if __name__ == "__main__":
+    main()
