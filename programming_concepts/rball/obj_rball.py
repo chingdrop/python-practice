@@ -12,15 +12,15 @@ class Player:
         self.prob = prob
         self.score = 0
 
-    def winsServe(self):
+    def wins_serve(self):
         # Returns a Boolean that is true with probability self.prob
         return random() <= self.prob
 
-    def incScore(self):
+    def inc_score(self):
         # Add a point to this player's score
         self.score = self.score + 1
 
-    def getScore(self):
+    def get_score(self):
         # Returns this player's current score
         return self.score
 
@@ -28,36 +28,36 @@ class RBallGame:
     # A RBallGame represents a game in progress. A game has two players
     # and keeps track of which one is currently serving.
 
-    def __init__(self, probA, probB):
+    def __init__(self, prob_a, prob_b):
         # Create a new game having players with the given probs.
-        self.playerA = Player(probA)
-        self.playerB = Player(probB)
-        self.server = self.playerA  # Player A always serves first
+        self.player_a = Player(prob_a)
+        self.player_b = Player(prob_b)
+        self.server = self.player_a  # Player A always serves first
 
     def play(self):
         # Play the game to completion
-        while not self.isOver():
-            if self.server.winsServe():
-                self.server.incScore()
+        while not self.is_over():
+            if self.server.wins_serve():
+                self.server.inc_score()
             else:
-                self.changeServer()
+                self.change_server()
             
-    def isOver(self):
+    def is_over(self):
         # Returns game is finished (i.e. one of the players has won).
-        a,b = self.getScores()
+        a,b = self.get_scores()
         return a == 15 or b == 15 or \
                (a == 7 and b == 0) or (b==7 and a == 0)
 
-    def changeServer(self):
+    def change_server(self):
         # Switch which player is serving
-        if self.server == self.playerA:
-            self.server = self.playerB
+        if self.server == self.player_a:
+            self.server = self.player_b
         else:
-            self.server = self.playerA
+            self.server = self.player_a
 
-    def getScores(self):
+    def get_scores(self):
         # Returns the current scores of player A and player B
-        return self.playerA.getScore(), self.playerB.getScore()
+        return self.player_a.get_score(), self.player_b.get_score()
 
 class SimStats:
     # SimStats handles accumulation of statistics across multiple
@@ -66,33 +66,33 @@ class SimStats:
 
     def __init__(self):
         # Create a new accumulator for a series of games
-        self.winsA = 0
-        self.winsB = 0
-        self.shutsA = 0
-        self.shutsB = 0
+        self.wins_a = 0
+        self.wins_b = 0
+        self.shuts_a = 0
+        self.shuts_b = 0
 
-    def update(self, aGame):
+    def update(self, game):
         # Determine the outcome of aGame and update statistics
-        a, b = aGame.getScores()
+        a, b = game.getScores()
         if a > b:                             # A won the game
-            self.winsA = self.winsA + 1
+            self.wins_a = self.wins_a + 1
             if b == 0:
-                self.shutsA = self.shutsA + 1
+                self.shuts_a = self.shuts_a + 1
         else:                                 # B won the game
-            self.winsB = self.winsB + 1
+            self.wins_b = self.wins_b + 1
             if a == 0:
-                self.shutsB = self.shutsB + 1
+                self.shuts_b = self.shuts_b + 1
 
-    def printReport(self):
+    def print_report(self):
         # Print a nicely formatted report
-        n = self.winsA + self.winsB
+        n = self.wins_a + self.wins_b
         print("Summary of", n , "games:\n")
         print("          wins (% total)   shutouts (% wins)  ")
         print("--------------------------------------------")
-        self.printLine("A", self.winsA, self.shutsA, n)
-        self.printLine("B", self.winsB, self.shutsB, n)
+        self.print_line("A", self.wins_a, self.shuts_a, n)
+        self.print_line("B", self.wins_b, self.shuts_b, n)
             
-    def printLine(self, label, wins, shuts, n):
+    def print_line(self, label, wins, shuts, n):
         template = "Player {0}:{1:5}  ({2:5.1%}) {3:11}   ({4})"
         if wins == 0:        # Avoid division by zero!
             shutStr = "-----"
@@ -101,24 +101,24 @@ class SimStats:
         print(template.format(label, wins, float(wins)/n, shuts, shutStr)) 
 
 
-def printIntro():
+def print_intro():
     print("This program simulates games of racquetball between two")
     print('players called "A" and "B".  The ability of each player is')
     print("indicated by a probability (a number between 0 and 1) that")
     print("the player wins the point when serving. Player A always")
     print("has the first serve.\n")
         
-def getInputs():
+def get_inputs():
     # Returns the three simulation parameters
     a = float(input("What is the prob. player A wins a serve? "))
     b = float(input("What is the prob. player B wins a serve? "))
     n = int(input("How many games to simulate? "))
     return a, b, n
 
-def main():
-    printIntro()
+def obj_rball():
+    print_intro()
     
-    probA, probB, n = getInputs()
+    probA, probB, n = get_inputs()
 
     # Play the games
     stats = SimStats()
@@ -128,7 +128,7 @@ def main():
         stats.update(theGame)             # extract info
 
     # Print the results
-    stats.printReport()
+    stats.print_report()
 
-main()
+obj_rball()
 input("\nPress <Enter> to quit")
