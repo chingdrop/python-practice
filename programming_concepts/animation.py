@@ -1,4 +1,4 @@
-# File - animation2.py
+# File - animation.py
 # Version 2
 # Latest Version - Chapter 11
 # Multiple-shot cannonball animation
