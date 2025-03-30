@@ -1,4 +1,4 @@
-# File - addinterest.py
+# File - add_interest.py
 # Version 3
 # Latest Version - Chapter 6
 

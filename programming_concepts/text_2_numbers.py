@@ -1,4 +1,4 @@
-# text2numbers.py
+# text_2_numbers.py
 # Latest Version - Chapter 5
 # A program to convert a textual message into a sequence of numbers, utilizing the underlying Unicode encoding.
 

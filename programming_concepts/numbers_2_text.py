@@ -1,4 +1,4 @@
-# File - numbers2text.py
+# File - numbers_2_text.py
 # Version 2
 # Latest Version - Chapter 5
 # A program to convert a sequence of Unicode numbers into a string of text.

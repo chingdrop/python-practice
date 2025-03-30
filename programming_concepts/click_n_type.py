@@ -1,4 +1,4 @@
-# File - clickntype.py
+# File - click_n_type.py
 # Latest Version - Chapter 4
 # Graphics program illustrating mouse and keypress inputs
 

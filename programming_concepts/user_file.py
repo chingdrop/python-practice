@@ -1,4 +1,4 @@
-# File - userfile.py
+# File - user_file.py
 # Latest Version - Chapter 5
 # Program to create a file of usernames in batch mode.
 
