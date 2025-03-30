@@ -2,21 +2,22 @@
 # Latest Version - Chapter 11
 
 
-def byFreq(pair):
+def by_freq(pair):
     return pair[1]
 
 
 def main():
-    print("This program analyzes word frequency in a file")
-    print("and prints a report on the n most frequent words.\n")
+    print(
+        "This program analyzes word frequency in a file and prints a report on the n most frequent words.\n"
+    )
 
     # get the sequence of words from the file
     fname = input("File to analyze: ")
-    text = open(fname, "r").read()
-    text = text.lower()
-    for ch in '!"#$%&()*+,-./:;<=>?@[\\]^_`{|}~':
-        text = text.replace(ch, " ")
-    words = text.split()
+    with open(fname, "r").read() as text:
+        text = text.lower()
+        for ch in '!"#$%&()*+,-./:;<=>?@[\\]^_`{|}~':
+            text = text.replace(ch, " ")
+        words = text.split()
 
     # construct a dictionary of word counts
     counts = {}
@@ -27,10 +28,10 @@ def main():
     n = int(input("Output analysis of how many words? "))
     items = list(counts.items())
     items.sort()
-    items.sort(key=byFreq, reverse=True)
+    items.sort(key=by_freq, reverse=True)
     for i in range(n):
         word, count = items[i]
-        print("{0:<15}{1:>5}".format(word, count))
+        print(f"{word:<15}{count:>5}")
 
 
 if __name__ == "__main__":
