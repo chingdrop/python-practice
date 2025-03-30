@@ -1,4 +1,4 @@
-# File - obj_rball.py
+# File - oop_rball.py
 # Latest Version - Chapter 12
 # Simulation of a racquet game. Illustrates design with objects.
 
@@ -119,7 +119,7 @@ def get_inputs():
     return a, b, n
 
 
-def obj_rball():
+def oop_rball():
     print_intro()
 
     probA, probB, n = get_inputs()
@@ -135,5 +135,5 @@ def obj_rball():
     stats.print_report()
 
 
-obj_rball()
+oop_rball()
 input("\nPress <Enter> to quit")
