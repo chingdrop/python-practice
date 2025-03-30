@@ -1,4 +1,4 @@
-# File - calc.pyw
+# File - calc.py
 # Latest Version - Chapter 11
 # A four function calculator using Python arithmetic.
 # Illustrates use of objects and lists to build a simple GUI.
