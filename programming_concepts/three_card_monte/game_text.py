@@ -1,15 +1,17 @@
 from programming_concepts.classes.graphics import *
+
+
 class GameText:
-    """ A custom wigdet that displays text. The text can be changed by its value.
-        The text will isplay the win, lose, welcoome and quit messages."""
-    
+    """A custom wigdet that displays text. The text can be changed by its value.
+    The text will isplay the win, lose, welcoome and quit messages."""
+
     def __init__(self, win, center):
         """Creates Interactive Text, e.g.:
            message = GameText(myWin, Point(40,50))
         creates interactive text centered at (40,50)"""
 
         # initializes are parameters used by the methods.
-        self.win = win            
+        self.win = win
         cx, cy = center.getX(), center.getY()
         self.welcome = "Welcome to Three Card Monte"
         self.winMessage = "You win! Try again or quit."
@@ -17,12 +19,12 @@ class GameText:
         self.w = "0"
         self.l = "0"
 
-        # Constructs interactive text. 
+        # Constructs interactive text.
         self.Message1 = self.__makeText(cx, cy)
 
     def __makeText(self, x, y):
         "helper method that creates the interactive text."
-        gameMessage = Text(Point(x,y), "")
+        gameMessage = Text(Point(x, y), "")
         gameMessage.setText("Welcome to Three Card Monte")
         gameMessage.draw(self.win)
         return gameMessage
@@ -47,4 +49,10 @@ class GameText:
 
         # Puts together the quit message.
         else:
-            self.Message1.setText("You won "+self.w+" times and lost "+self.l+" times. Click anywhere to close.")
+            self.Message1.setText(
+                "You won "
+                + self.w
+                + " times and lost "
+                + self.l
+                + " times. Click anywhere to close."
+            )
