@@ -16,8 +16,8 @@ def main():
     win.setBackground("lightblue")
 
     # creates three variables and starts them at zero.
-    winCount = 0
-    loseCount = 0
+    win_count = 0
+    lose_count = 0
     choice = 0
 
     # draws the cards (buttons) and activates them.
@@ -57,13 +57,13 @@ def main():
         if cb1.clicked(pt):
             choice = 1
             if choice == correct:
-                winCount = winCount + 1
+                win_count = win_count + 1
                 # Displays the green circle and the win text for card 1.
                 outcome1.set_outcome(1)
                 message1.set_value(2)
 
             else:
-                loseCount = loseCount + 1
+                lose_count = lose_count + 1
                 # Displays the red X and the lose text for card 1.
                 outcome1.set_outcome(2)
                 message1.set_value(3)
@@ -73,13 +73,13 @@ def main():
             choice = 2
             # Second correct event
             if choice == correct:
-                winCount = winCount + 1
+                win_count = win_count + 1
                 # Displays the green circle and the win text for card 2.
                 outcome2.set_outcome(1)
                 message1.set_value(2)
 
             else:
-                loseCount = loseCount + 1
+                lose_count = lose_count + 1
                 # Displays the red X and the lose text for card 2.
                 outcome2.set_outcome(2)
                 message1.set_value(3)
@@ -89,13 +89,13 @@ def main():
             choice = 3
             # Third correct event
             if choice == correct:
-                winCount = winCount + 1
+                win_count = win_count + 1
                 # Displays the green circle and the win text for card 3.
                 outcome3.set_outcome(1)
                 message1.set_value(2)
 
             else:
-                loseCount = loseCount + 1
+                lose_count = lose_count + 1
                 # Displays the red X and the lose text for card 3.
                 outcome3.set_outcome(2)
                 message1.set_value(3)
@@ -110,7 +110,7 @@ def main():
         outcome3.set_outcome(0)
 
     # Converts win and lose count to strings.
-    message1.set_count(winCount, loseCount)
+    message1.set_count(win_count, lose_count)
 
     # Prints a message displaying wins and loses.
     message1.set_value(4)

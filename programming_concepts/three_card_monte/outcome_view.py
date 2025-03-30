@@ -27,20 +27,20 @@ class OutcomeView:
 
     def __make_correct(self, x, y):
         "Creates a circle and sets the background to the same color as the card."
-        correctOutcome = Circle(Point(x, y), self.csize)
-        correctOutcome.setFill(self.background)
-        correctOutcome.setOutline(self.background)
-        correctOutcome.draw(self.win)
-        return correctOutcome
+        correct_outcome = Circle(Point(x, y), self.csize)
+        correct_outcome.setFill(self.background)
+        correct_outcome.setOutline(self.background)
+        correct_outcome.draw(self.win)
+        return correct_outcome
 
     def __make_wrong(self, x1, x2, y1, y2):
         "Creates an X and sets the background to the card."
         p1 = Point(x1, y1)
         p2 = Point(x2, y2)
-        wrongOutcome = Line(p1, p2)
-        wrongOutcome.draw(self.win)
-        wrongOutcome.setFill(self.background)
-        return wrongOutcome
+        wrong_outcome = Line(p1, p2)
+        wrong_outcome.draw(self.win)
+        wrong_outcome.setFill(self.background)
+        return wrong_outcome
 
     def set_outcome(self, value):
         "Set the value of the image to color in a green circle or a red X"
