@@ -10,48 +10,46 @@ class Student:
         self.hours = float(hours)
         self.qpoints = float(qpoints)
 
-    def getName(self):
+    def get_name(self):
         return self.name
 
-    def getHours(self):
+    def get_hours(self):
         return self.hours
 
-    def getQPoints(self):
+    def get_q_points(self):
         return self.qpoints
 
     def gpa(self):
         return self.qpoints / self.hours
 
 
-def makeStudent(infoStr):
+def make_student(info_str):
     # infoStr is a tab-separated line: name hours qpoints
     # returns a corresponding Student object
-    name, hours, qpoints = infoStr.split("\t")
+    name, hours, qpoints = info_str.split("\t")
     return Student(name, hours, qpoints)
 
 
 def main():
     # open the input file for reading
     filename = input("Enter name the grade file: ")
-    infile = open(filename, "r")
+    with open(filename, "r") as input_file:
 
-    # set best to the record for the first student in the file
-    best = makeStudent(infile.readline())
+        # set best to the record for the first student in the file
+        best = make_student(input_file.readline())
 
-    # process subsequent lines of the file
-    for line in infile:
-        # turn the line into a student record
-        s = makeStudent(line)
-        # if this student is best so far, remember it.
-        if s.gpa() > best.gpa():
-            best = s
-
-    infile.close()
+        # process subsequent lines of the file
+        for line in input_file:
+            # turn the line into a student record
+            s = make_student(line)
+            # if this student is best so far, remember it.
+            if s.gpa() > best.gpa():
+                best = s
 
     # print information about the best student
-    print("The best student is:", best.getName())
-    print("hours:", best.getHours())
-    print("GPA:", best.gpa())
+    print(
+        f"The best student is: {best.get_name()} hours: {best.get_hours()} GPA: {best.gpa()}"
+    )
 
 
 if __name__ == "__main__":
