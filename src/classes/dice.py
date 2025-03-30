@@ -2,7 +2,7 @@
 
 from random import randrange
 
-from programming_concepts.classes.graphics import Circle, Point, Rectangle
+from src.classes.graphics import Circle, Point, Rectangle
 
 
 class Dice:

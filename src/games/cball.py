@@ -2,7 +2,7 @@
 # Version 4
 # Latest Version - Chapter 10
 
-from programming_concepts.classes.projectile import Projectile
+from src.classes.projectile import Projectile
 
 
 def get_inputs():

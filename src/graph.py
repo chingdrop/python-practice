@@ -1,5 +1,5 @@
-from programming_concepts.calc import distance
-from programming_concepts.classes.graphics import Entry, GraphWin, Point, Polygon, Text
+from src.calc import distance
+from src.classes.graphics import Entry, GraphWin, Point, Polygon, Text
 
 
 def click():

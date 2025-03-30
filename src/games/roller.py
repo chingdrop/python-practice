@@ -5,9 +5,9 @@
 
 from random import randrange
 
-from programming_concepts.classes.graphics import GraphWin, Point
-from programming_concepts.classes.button import Button
-from programming_concepts.classes.dice import DieView
+from src.classes.graphics import GraphWin, Point
+from src.classes.button import Button
+from src.classes.dice import DieView
 
 
 def main():

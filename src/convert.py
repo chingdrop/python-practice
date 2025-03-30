@@ -5,7 +5,7 @@
 # This version issues heat and cold warnings.
 
 
-from programming_concepts.classes.graphics import (
+from src.classes.graphics import (
     Entry,
     GraphWin,
     Point,

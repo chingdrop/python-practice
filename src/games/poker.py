@@ -1,9 +1,9 @@
 # File - pokerapp.py
 # Latest Version - Chapter 12
 
-from programming_concepts.classes.button import Button
-from programming_concepts.classes.dice import ColorDieView, Dice
-from programming_concepts.classes.graphics import GraphWin, Point, Text
+from src.classes.button import Button
+from src.classes.dice import ColorDieView, Dice
+from src.classes.graphics import GraphWin, Point, Text
 
 
 class PokerApp:

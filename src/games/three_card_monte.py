@@ -3,8 +3,8 @@
 # threecardmonte.py
 
 from random import randrange
-from programming_concepts.classes.graphics import Circle, GraphWin, Line, Point, Text
-from programming_concepts.classes.button import Button
+from src.classes.graphics import Circle, GraphWin, Line, Point, Text
+from src.classes.button import Button
 
 class GameText:
     """A custom wigdet that displays text. The text can be changed by its value.

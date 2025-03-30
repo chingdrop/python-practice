@@ -4,8 +4,8 @@
 # Multiple-shot cannonball animation
 
 from math import sin, cos, radians, degrees
-from programming_concepts.classes.graphics import *
-from programming_concepts.classes.projectile import Projectile
+from src.classes.graphics import *
+from src.classes.projectile import Projectile
 
 
 class Launcher:

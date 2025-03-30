@@ -1,8 +1,8 @@
 import math
 from math import sqrt
 
-from programming_concepts.classes.graphics import *
-from programming_concepts.classes.button import Button
+from src.classes.graphics import *
+from src.classes.button import Button
 
 
 # Latest Version - Chapter 11

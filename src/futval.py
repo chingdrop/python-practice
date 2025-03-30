@@ -3,7 +3,7 @@
 # A program to compute the value of an investment carried 10 years into the future
 
 
-from programming_concepts.classes.graphics import GraphWin, Point, Rectangle, Text
+from src.classes.graphics import GraphWin, Point, Rectangle, Text
 
 
 def create_labeled_window():
