@@ -2,11 +2,11 @@
 # 2017/11/02
 #threecardmonte.py
 
-from graphics import GraphWin, Point, Text
-from button import Button
 from random import randrange
-from outcomeView import OutcomeView
-from gameText import GameText
+from programming_concepts.classes.graphics import GraphWin, Point
+from programming_concepts.classes.button import Button
+from programming_concepts.three_card_monte.outcome_view import OutcomeView
+from programming_concepts.three_card_monte.game_text import GameText
 
 def main():
 

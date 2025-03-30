@@ -1,4 +1,4 @@
-from graphics import *
+from programming_concepts.classes.graphics import *
 class OutcomeView:
     """ Outcome View is a widget that creates a
         visual interpretation of a win and a lose."""
