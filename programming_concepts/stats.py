@@ -3,7 +3,7 @@
 from math import sqrt
 
 
-def getNumbers():
+def get_numbers():
     nums = []  # start with an empty list
 
     # sentinel loop to get numbers
@@ -22,7 +22,7 @@ def mean(nums):
     return total / len(nums)
 
 
-def stdDev(nums, xbar):
+def std_dev(nums, xbar):
     sumDevSq = 0.0
     for num in nums:
         dev = num - xbar
@@ -44,14 +44,12 @@ def median(nums):
 def main():
     print("This program computes mean, median and standard deviation.")
 
-    data = getNumbers()
+    data = get_numbers()
     xbar = mean(data)
-    std = stdDev(data, xbar)
+    std = std_dev(data, xbar)
     med = median(data)
 
-    print("\nThe mean is", xbar)
-    print("The standard deviation is", std)
-    print("The median is", med)
+    print(f"\nThe mean is {xbar}, the standard deviation is {std}, the median is {med}")
 
 
 if __name__ == "__main__":
