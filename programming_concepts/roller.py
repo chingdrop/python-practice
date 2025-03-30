@@ -20,19 +20,19 @@ def main():
     # Draw the interface widgets
     die1 = DieView(win, Point(3, 7), 2)
     die2 = DieView(win, Point(7, 7), 2)
-    rollButton = Button(win, Point(5, 4.5), 6, 1, "Roll Dice")
-    rollButton.activate()
-    quitButton = Button(win, Point(5, 1), 2, 1, "Quit")
+    roll_button = Button(win, Point(5, 4.5), 6, 1, "Roll Dice")
+    roll_button.activate()
+    quit_button = Button(win, Point(5, 1), 2, 1, "Quit")
 
     # Event loop
     pt = win.getMouse()
-    while not quitButton.clicked(pt):
-        if rollButton.clicked(pt):
+    while not quit_button.clicked(pt):
+        if roll_button.clicked(pt):
             value1 = randrange(1, 7)
             die1.set_value(value1)
             value2 = randrange(1, 7)
             die2.set_value(value2)
-            quitButton.activate()
+            quit_button.activate()
         pt = win.getMouse()
 
     # close up shop
