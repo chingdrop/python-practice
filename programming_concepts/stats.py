@@ -7,11 +7,11 @@ def get_numbers():
     nums = []  # start with an empty list
 
     # sentinel loop to get numbers
-    xStr = input("Enter a number (<Enter> to quit) >> ")
-    while xStr != "":
-        x = float(xStr)
+    x = input("Enter a number (<Enter> to quit) >> ")
+    while x != "":
+        x = float(x)
         nums.append(x)  # add this value to the list
-        xStr = input("Enter a number (<Enter> to quit) >> ")
+        x = input("Enter a number (<Enter> to quit) >> ")
     return nums
 
 
@@ -23,21 +23,21 @@ def mean(nums):
 
 
 def std_dev(nums, xbar):
-    sumDevSq = 0.0
+    sum_dev_sq = 0.0
     for num in nums:
         dev = num - xbar
-        sumDevSq = sumDevSq + dev * dev
-    return sqrt(sumDevSq / (len(nums) - 1))
+        sum_dev_sq = sum_dev_sq + dev * dev
+    return sqrt(sum_dev_sq / (len(nums) - 1))
 
 
 def median(nums):
     nums.sort()
     size = len(nums)
-    midPos = size // 2
+    mid_pos = size // 2
     if size % 2 == 0:
-        med = (nums[midPos] + nums[midPos - 1]) / 2.0
+        med = (nums[mid_pos] + nums[mid_pos - 1]) / 2.0
     else:
-        med = nums[midPos]
+        med = nums[mid_pos]
     return med
 
 
