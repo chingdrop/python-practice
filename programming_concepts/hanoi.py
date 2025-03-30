@@ -5,7 +5,7 @@
 
 def move_tower(n, source, dest, temp):
     if n == 1:
-        print("Move disk from", source, "to", dest + ".")
+        print(f"Move disk from {source} to {dest}.")
     else:
         move_tower(n - 1, source, temp, dest)
         move_tower(1, source, dest, temp)
