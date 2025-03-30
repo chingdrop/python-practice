@@ -97,10 +97,10 @@ class SimStats:
     def print_line(self, label, wins, shuts, n):
         template = "Player {0}:{1:5}  ({2:5.1%}) {3:11}   ({4})"
         if wins == 0:  # Avoid division by zero!
-            shutStr = "-----"
+            shut_str = "-----"
         else:
-            shutStr = "{0:4.1%}".format(float(shuts) / wins)
-        print(template.format(label, wins, float(wins) / n, shuts, shutStr))
+            shut_str = "{0:4.1%}".format(float(shuts) / wins)
+        print(template.format(label, wins, float(wins) / n, shuts, shut_str))
 
 
 def print_intro():
@@ -122,14 +122,14 @@ def get_inputs():
 def oop_rball():
     print_intro()
 
-    probA, probB, n = get_inputs()
+    prob_a, prob_b, n = get_inputs()
 
     # Play the games
     stats = SimStats()
     for i in range(n):
-        theGame = RBallGame(probA, probB)  # create a new game
-        theGame.play()  # play it
-        stats.update(theGame)  # extract info
+        the_game = RBallGame(prob_a, prob_b)  # create a new game
+        the_game.play()  # play it
+        stats.update(the_game)  # extract info
 
     # Print the results
     stats.print_report()
