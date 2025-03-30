@@ -1,10 +1,68 @@
-# File - guipoker.py
+# File - pokerapp.py
 # Latest Version - Chapter 12
 
-from programming_concepts.classes.graphics import *
-from programming_concepts.poker.pokerapp import PokerApp
 from programming_concepts.classes.button import Button
-from programming_concepts.classes.dice import ColorDieView
+from programming_concepts.classes.dice import ColorDieView, Dice
+from programming_concepts.classes.graphics import GraphWin, Point, Text
+
+
+class PokerApp:
+
+    def __init__(self, interface):
+        self.dice = Dice()
+        self.money = 100
+        self.interface = interface
+
+    def run(self):
+        while self.money >= 10 and self.interface.want_to_play():
+            self.play_round()
+        self.interface.close()
+
+    def play_round(self):
+        self.money = self.money - 10
+        self.interface.set_money(self.money)
+        self.do_rolls()
+        result, score = self.dice.score()
+        self.interface.show_result(result, score)
+        self.money = self.money + score
+        self.interface.set_money(self.money)
+
+    def do_rolls(self):
+        self.dice.roll_all()
+        roll = 1
+        self.interface.set_dice(self.dice.values())
+        toRoll = self.interface.choose_dice()
+        while roll < 3 and toRoll != []:
+            self.dice.roll(toRoll)
+            roll = roll + 1
+            self.interface.set_dice(self.dice.values())
+            if roll < 3:
+                toRoll = self.interface.choose_dice()
+
+
+class TextInterface:
+
+    def __init__(self):
+        print("Welcome to video poker.")
+
+    def set_money(self, amt):
+        print(f"You currently have ${amt}.")
+
+    def set_dice(self, values):
+        print("Dice:", values)
+
+    def want_to_play(self):
+        ans = input("Do you wish to try your luck? ")
+        return ans[0] in "yY"
+
+    def close(self):
+        print("\nThanks for playing!")
+
+    def show_result(self, msg, score):
+        print(f"{msg}. You win ${score}.")
+
+    def choose_dice(self):
+        return eval(input("Enter list of which to change ([] to stop) "))
 
 
 class GraphicsInterface:
@@ -112,8 +170,3 @@ class GraphicsInterface:
             for b in buttons:
                 if b.clicked(p):
                     return b.get_label()  # function exit here.
-
-
-inter = GraphicsInterface()
-app = PokerApp(inter)
-app.run()
