@@ -8,14 +8,14 @@ def happy():
     return "Happy birthday to you!\n"
 
 
-def verseFor(person):
+def verse_for(person):
     lyrics = f"{happy() * 2} Happy birthday, dear {person}.\n{happy()}"
     return lyrics
 
 
 def main():
     for person in ["Fred", "Lucy", "Elmer"]:
-        print(verseFor(person))
+        print(verse_for(person))
 
 
 if __name__ == "__main__":

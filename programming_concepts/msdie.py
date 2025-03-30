@@ -14,8 +14,8 @@ class MSDie:
     def roll(self):
         self.value = randrange(1, self.sides + 1)
 
-    def getValue(self):
+    def get_value(self):
         return self.value
 
-    def setValue(self, value):
+    def set_value(self, value):
         self.value = value

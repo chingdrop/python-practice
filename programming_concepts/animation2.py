@@ -5,7 +5,7 @@
 
 from math import sin, cos, radians, degrees
 from programming_concepts.classes.graphics import *
-from programming_concepts.projectile import Projectile
+from programming_concepts.classes.projectile import Projectile
 
 
 class Launcher:
@@ -42,13 +42,13 @@ class Launcher:
         self.arrow.setArrow("last")
         self.arrow.setWidth(3)
 
-    def adjAngle(self, amt):
+    def adj_angle(self, amt):
         """change angle by amt degrees"""
 
         self.angle = self.angle + radians(amt)
         self.redraw()
 
-    def adjVel(self, amt):
+    def adj_vel(self, amt):
         """change velocity by amt"""
 
         self.vel = self.vel + amt
@@ -77,17 +77,17 @@ class ShotTracker:
 
         self.proj.update(dt)
         center = self.marker.getCenter()
-        dx = self.proj.getX() - center.getX()
-        dy = self.proj.getY() - center.getY()
+        dx = self.proj.get_x() - center.getX()
+        dy = self.proj.get_y() - center.getY()
         self.marker.move(dx, dy)
 
-    def getX(self):
+    def get_x(self):
         """return the current x coordinate of the shot's center"""
-        return self.proj.getX()
+        return self.proj.get_x()
 
-    def getY(self):
+    def get_y(self):
         """return the current y coordinate of the shot's center"""
-        return self.proj.getY()
+        return self.proj.get_y()
 
     def undraw(self):
         """undraw the shot"""
@@ -107,7 +107,7 @@ class ProjectileApp:
         self.launcher = Launcher(self.win)
         self.shots = []
 
-    def updateShots(self, dt):
+    def update_shots(self, dt):
         alive = []
         for shot in self.shots:
             shot.update(dt)
@@ -121,20 +121,20 @@ class ProjectileApp:
 
         # main event/animation lopp
         while True:
-            self.updateShots(1 / 30)
+            self.update_shots(1 / 30)
 
             key = self.win.checkKey()
             if key in ["q", "Q"]:
                 break
 
             if key == "Up":
-                self.launcher.adjAngle(5)
+                self.launcher.adj_angle(5)
             elif key == "Down":
-                self.launcher.adjAngle(-5)
+                self.launcher.adj_angle(-5)
             elif key == "Right":
-                self.launcher.adjVel(5)
+                self.launcher.adj_vel(5)
             elif key == "Left":
-                self.launcher.adjVel(-5)
+                self.launcher.adj_vel(-5)
             elif key == "f":
                 self.shots.append(self.launcher.fire())
 

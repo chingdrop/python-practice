@@ -31,7 +31,7 @@ def anagrams(s):
         return ans
 
 
-def loopPower(a, n):
+def loop_power(a, n):
     # returns a rasied to int power n
     ans = 1
     for i in range(n):
@@ -39,19 +39,19 @@ def loopPower(a, n):
     return ans
 
 
-def recPower(a, n):
+def rec_power(a, n):
     # returns a raised to int power n
     if n == 0:
         return 1
     else:
-        factor = recPower(a, n / 2)
+        factor = rec_power(a, n / 2)
         if n % 2 == 0:  # n is even
             return factor * factor
         else:
             return factor * factor * a
 
 
-def loopFib(n):
+def loop_fib(n):
     # returns the nth Fibonacci number
     curr = 1
     prev = 1
@@ -60,10 +60,10 @@ def loopFib(n):
     return curr
 
 
-def recFib(n):
+def rec_fib(n):
     # returns nth Fibonacci number
     # Note: this algorithm is exceedingly inefficient!
     if n < 3:
         return 1
     else:
-        return recFib(n - 1) + recFib(n - 2)
+        return rec_fib(n - 1) + rec_fib(n - 2)

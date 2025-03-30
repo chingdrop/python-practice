@@ -6,7 +6,7 @@
 from programming_concepts.classes.graphics import *
 
 
-def handleKey(k, win):
+def handle_key(k, win):
     if k == "r":
         win.setBackground("pink")
     elif k == "w":
@@ -17,7 +17,7 @@ def handleKey(k, win):
         win.setBackground("lightblue")
 
 
-def handleClick(pt, win):
+def handle_click(pt, win):
     # create an Entry for user to type in
     entry = Entry(pt, 10)
     entry.draw(win)
@@ -47,11 +47,11 @@ def main():
             break
 
         if key:
-            handleKey(key, win)
+            handle_key(key, win)
 
         pt = win.checkMouse()
         if pt:
-            handleClick(pt, win)
+            handle_click(pt, win)
 
     win.close()
 

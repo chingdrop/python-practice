@@ -5,7 +5,7 @@
 from programming_concepts.classes.graphics import *
 
 
-def createLabeledWindow():
+def create_labeled_window():
     window = GraphWin("Investment Growth Chart", 320, 240)
     window.setBackground("white")
     window.setCoords(-1.75, -200, 11.5, 10400)
@@ -17,7 +17,7 @@ def createLabeledWindow():
     return window
 
 
-def drawBar(window, year, height):
+def draw_bar(window, year, height):
     bar = Rectangle(Point(year, 0), Point(year + 1, height))
     bar.setFill("green")
     bar.setWidth(2)
@@ -30,11 +30,11 @@ def main():
     principal = float(input("Enter the initial principal: "))
     apr = float(input("Enter the annualized interest rate: "))
 
-    win = createLabeledWindow()
-    drawBar(win, 0, principal)
+    win = create_labeled_window()
+    draw_bar(win, 0, principal)
     for year in range(1, 11):
         principal = principal * (1 + apr)
-        drawBar(win, year, principal)
+        draw_bar(win, year, principal)
 
     input("Press <Enter> to quit.")
     win.close()

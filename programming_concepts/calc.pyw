@@ -17,14 +17,14 @@ class Calculator:
         win.setBackground("slategray")
         self.win = win
         # Now create the widgets
-        self.__createButtons()
-        self.__createDisplay()
+        self.__create_buttons()
+        self.__create_display()
 
-    def __createButtons(self):
+    def __create_buttons(self):
         # create list of buttons
         # start with all the standard sized buttons
         # bSpecs gives center coords and label of buttons
-        bSpecs = [
+        b_specs = [
             (2, 1, "0"),
             (3, 1, "."),
             (1, 2, "1"),
@@ -44,7 +44,7 @@ class Calculator:
             (5, 4, "C"),
         ]
         self.buttons = []
-        for cx, cy, label in bSpecs:
+        for cx, cy, label in b_specs:
             self.buttons.append(Button(self.win, Point(cx, cy), 0.75, 0.75, label))
         # create the larger = button
         self.buttons.append(Button(self.win, Point(4.5, 1), 1.75, 0.75, "="))
@@ -52,7 +52,7 @@ class Calculator:
         for b in self.buttons:
             b.activate()
 
-    def __createDisplay(self):
+    def __create_display(self):
         bg = Rectangle(Point(0.5, 5.5), Point(5.5, 6.5))
         bg.setFill("white")
         bg.draw(self.win)
@@ -63,7 +63,7 @@ class Calculator:
         text.setSize(16)
         self.display = text
 
-    def getButton(self):
+    def get_button(self):
         # Waits for a button to be clicked and returns the label of
         #    the button that was clicked.
         while True:
@@ -72,7 +72,7 @@ class Calculator:
                 if b.clicked(p):
                     return b.getLabel()  # method exit
 
-    def processButton(self, key):
+    def process_button(self, key):
         # Updates the display of the calculator for press of this key
         text = self.display.getText()
         if key == "C":
@@ -96,8 +96,8 @@ class Calculator:
     def run(self):
         # Infinite 'event loop' to process button clicks.
         while True:
-            key = self.getButton()
-            self.processButton(key)
+            key = self.get_button()
+            self.process_button(key)
 
 
 # This runs the program.
