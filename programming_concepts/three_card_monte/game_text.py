@@ -1,4 +1,4 @@
-from graphics import *
+from programming_concepts.classes.graphics import *
 class GameText:
     """ A custom wigdet that displays text. The text can be changed by its value.
         The text will isplay the win, lose, welcoome and quit messages."""
