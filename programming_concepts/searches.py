@@ -3,14 +3,14 @@
 # Implementation of linear and binary searches
 
 
-def linSearch(x, nums):
+def lin_search(x, nums):
     for i in range(len(nums)):
         if nums[i] == x:  # item found, return the index value
             return i
     return -1  # loop finished, item was not in list
 
 
-def binSearch(x, nums):
+def bin_search(x, nums):
     low = 0
     high = len(nums) - 1
     while low <= high:  # There is still a range to search
@@ -25,7 +25,7 @@ def binSearch(x, nums):
     return -1  # no range left to search, x is not there
 
 
-def recBinSearch(x, nums, low, high):
+def rec_bin_search(x, nums, low, high):
     if low > high:  # No place left to look, return -1
         return -1
     mid = (low + high) // 2
@@ -33,13 +33,13 @@ def recBinSearch(x, nums, low, high):
     if item == x:  # Found it! Return the index
         return mid
     elif x < item:  # Look in lower half
-        return recBinSearch(x, nums, low, mid - 1)
+        return rec_bin_search(x, nums, low, mid - 1)
     else:  # Look in upper half
-        return recBinSearch(x, nums, mid + 1, high)
+        return rec_bin_search(x, nums, mid + 1, high)
 
 
-def rbinSearch(x, nums):
-    return recBinSearch(x, nums, 0, len(nums) - 1)
+def rbin_search(x, nums):
+    return rec_bin_search(x, nums, 0, len(nums) - 1)
 
 
 import time, random
@@ -52,7 +52,7 @@ import time, random
 #    of 5000 ints. The average is done over 10 trials.
 
 
-def avgTime(search, n, trials):
+def avg_time(search, n, trials):
     # build an ordered list of size n
     l1 = list(range(n))
     print("List built")

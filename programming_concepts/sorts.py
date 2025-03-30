@@ -3,7 +3,7 @@
 # Implementations of selection sort and merge sort.
 
 
-def selSort(lst):
+def sel_sort(lst):
     n = len(lst)
     for bottom in range(n - 1):
         mp = bottom
@@ -44,7 +44,7 @@ def merge(lst1, lst2, lst3):
         i3 = i3 + 1
 
 
-def mergeSort(lst):
+def merge_sort(lst):
     # Put items of lst in ascending order
     n = len(lst)
     # Do nothing is lst contains 0 or 1 items
@@ -53,8 +53,8 @@ def mergeSort(lst):
         m = n // 2
         lst1, lst2 = lst[:m], lst[m:]
         # recursively sort each piece
-        mergeSort(lst1)
-        mergeSort(lst2)
+        merge_sort(lst1)
+        merge_sort(lst2)
         # merge the sorted pieces
         merge(lst1, lst2, lst)
 
@@ -83,7 +83,7 @@ def mergeSort(lst):
 import random, time
 
 
-def genList(n):
+def get_list(n):
     # RETURNS a list of n random floats
     xs = []
     for i in range(n):
@@ -91,17 +91,17 @@ def genList(n):
     return xs
 
 
-def timeSort(sortFn, n):
+def time_sort(sortFn, n):
     # RETURNS the time it takes to sort a random list of size n
     #    using the given sorting function sortFn
-    xs = genList(n)
+    xs = get_list(n)
     t1 = time.time()
     sortFn(xs)
     t2 = time.time()
     return t2 - t1
 
 
-def timingCurve(sortFn, start, inc, stop, trials):
+def timing_curve(sortFn, start, inc, stop, trials):
     # RETURNS a list representing the average time required to sort
     #     lists of sizes start, start+inc, start+2*inc, ..., stop.
     times = []
@@ -110,7 +110,7 @@ def timingCurve(sortFn, start, inc, stop, trials):
         sum = 0.0
         for i in range(trials):
             print(i)
-            sum = sum + timeSort(sortFn, n)
+            sum = sum + time_sort(sortFn, n)
         avg = sum / trials
         print("avg = {0:0.1f}".format(avg))
         times.append(avg)
