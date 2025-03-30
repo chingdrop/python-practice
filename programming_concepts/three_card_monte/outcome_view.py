@@ -21,11 +21,11 @@ class OutcomeView:
         lsize = size / 2.0
 
         # Create the correct or wrong symbols for the outcome of the game
-        self.correct1 = self.__makeCorrect(cx, cy)
-        self.wrong1 = self.__makeWrong(cx - lsize, cx + lsize, cy + lsize, cy - lsize)
-        self.wrong2 = self.__makeWrong(cx + lsize, cx - lsize, cy + lsize, cy - lsize)
+        self.correct1 = self.__make_correct(cx, cy)
+        self.wrong1 = self.__make_wrong(cx - lsize, cx + lsize, cy + lsize, cy - lsize)
+        self.wrong2 = self.__make_wrong(cx + lsize, cx - lsize, cy + lsize, cy - lsize)
 
-    def __makeCorrect(self, x, y):
+    def __make_correct(self, x, y):
         "Creates a circle and sets the background to the same color as the card."
         correctOutcome = Circle(Point(x, y), self.csize)
         correctOutcome.setFill(self.background)
@@ -33,7 +33,7 @@ class OutcomeView:
         correctOutcome.draw(self.win)
         return correctOutcome
 
-    def __makeWrong(self, x1, x2, y1, y2):
+    def __make_wrong(self, x1, x2, y1, y2):
         "Creates an X and sets the background to the card."
         p1 = Point(x1, y1)
         p2 = Point(x2, y2)
@@ -42,7 +42,7 @@ class OutcomeView:
         wrongOutcome.setFill(self.background)
         return wrongOutcome
 
-    def setOutcome(self, value):
+    def set_outcome(self, value):
         "Set the value of the image to color in a green circle or a red X"
         # defaults the images to the card color.
         self.correct1.setFill(self.background)

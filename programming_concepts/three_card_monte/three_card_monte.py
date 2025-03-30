@@ -48,7 +48,7 @@ def main():
     correct = randrange(1, 4)
     pt = win.getMouse()
     # Displays the welcome message.
-    message1.setValue(1)
+    message1.set_value(1)
 
     # Continues as long as the quit button isn't pressed.
     while not qb.clicked(pt):
@@ -59,14 +59,14 @@ def main():
             if choice == correct:
                 winCount = winCount + 1
                 # Displays the green circle and the win text for card 1.
-                outcome1.setOutcome(1)
-                message1.setValue(2)
+                outcome1.set_outcome(1)
+                message1.set_value(2)
 
             else:
                 loseCount = loseCount + 1
                 # Displays the red X and the lose text for card 1.
-                outcome1.setOutcome(2)
-                message1.setValue(3)
+                outcome1.set_outcome(2)
+                message1.set_value(3)
 
         # Event for Button 2
         elif cb2.clicked(pt):
@@ -75,14 +75,14 @@ def main():
             if choice == correct:
                 winCount = winCount + 1
                 # Displays the green circle and the win text for card 2.
-                outcome2.setOutcome(1)
-                message1.setValue(2)
+                outcome2.set_outcome(1)
+                message1.set_value(2)
 
             else:
                 loseCount = loseCount + 1
                 # Displays the red X and the lose text for card 2.
-                outcome2.setOutcome(2)
-                message1.setValue(3)
+                outcome2.set_outcome(2)
+                message1.set_value(3)
 
         # Event for Button 3
         elif cb3.clicked(pt):
@@ -91,29 +91,29 @@ def main():
             if choice == correct:
                 winCount = winCount + 1
                 # Displays the green circle and the win text for card 3.
-                outcome3.setOutcome(1)
-                message1.setValue(2)
+                outcome3.set_outcome(1)
+                message1.set_value(2)
 
             else:
                 loseCount = loseCount + 1
                 # Displays the red X and the lose text for card 3.
-                outcome3.setOutcome(2)
-                message1.setValue(3)
+                outcome3.set_outcome(2)
+                message1.set_value(3)
 
         # Resets loop, and random generator.
         qb.activate()
         pt = win.getMouse()
         correct = randrange(1, 4)
         # Resets outcome images.
-        outcome1.setOutcome(0)
-        outcome2.setOutcome(0)
-        outcome3.setOutcome(0)
+        outcome1.set_outcome(0)
+        outcome2.set_outcome(0)
+        outcome3.set_outcome(0)
 
     # Converts win and lose count to strings.
-    message1.setCount(winCount, loseCount)
+    message1.set_count(winCount, loseCount)
 
     # Prints a message displaying wins and loses.
-    message1.setValue(4)
+    message1.set_value(4)
     win.getMouse()
     win.close()
 

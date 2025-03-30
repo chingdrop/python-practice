@@ -20,21 +20,21 @@ class GameText:
         self.l = "0"
 
         # Constructs interactive text.
-        self.Message1 = self.__makeText(cx, cy)
+        self.Message1 = self.__make_text(cx, cy)
 
-    def __makeText(self, x, y):
+    def __make_text(self, x, y):
         "helper method that creates the interactive text."
         gameMessage = Text(Point(x, y), "")
         gameMessage.setText("Welcome to Three Card Monte")
         gameMessage.draw(self.win)
         return gameMessage
 
-    def setCount(self, winCount, loseCount):
+    def set_count(self, winCount, loseCount):
         "A mutator method that updates the win/lose method."
         self.w = str(winCount)
         self.l = str(loseCount)
 
-    def setValue(self, value):
+    def set_value(self, value):
         "Sets the value that indicates which message to display."
         # default value
         self.Message1.setText("")
