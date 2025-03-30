@@ -49,10 +49,6 @@ class GameText:
 
         # Puts together the quit message.
         else:
-            self.Message1.setText(
-                "You won "
-                + self.w
-                + " times and lost "
-                + self.l
-                + " times. Click anywhere to close."
+            self.message1.setText(
+                f"You won {self.w} times and lost {self.l} times. Click anywhere to close."
             )
