@@ -14,38 +14,38 @@ class GameText:
         self.win = win
         cx, cy = center.getX(), center.getY()
         self.welcome = "Welcome to Three Card Monte"
-        self.winMessage = "You win! Try again or quit."
-        self.loseMessage = "You lose! Try again or quit."
+        self.win_message = "You win! Try again or quit."
+        self.lose_message = "You lose! Try again or quit."
         self.w = "0"
         self.l = "0"
 
         # Constructs interactive text.
-        self.Message1 = self.__make_text(cx, cy)
+        self.message1 = self.__make_text(cx, cy)
 
     def __make_text(self, x, y):
         "helper method that creates the interactive text."
-        gameMessage = Text(Point(x, y), "")
-        gameMessage.setText("Welcome to Three Card Monte")
-        gameMessage.draw(self.win)
-        return gameMessage
+        game_message = Text(Point(x, y), "")
+        game_message.setText("Welcome to Three Card Monte")
+        game_message.draw(self.win)
+        return game_message
 
-    def set_count(self, winCount, loseCount):
+    def set_count(self, win_count, lose_count):
         "A mutator method that updates the win/lose method."
-        self.w = str(winCount)
-        self.l = str(loseCount)
+        self.w = str(win_count)
+        self.l = str(lose_count)
 
     def set_value(self, value):
         "Sets the value that indicates which message to display."
         # default value
-        self.Message1.setText("")
+        self.message1.setText("")
 
         # changes game text based on the outcome of the game.
         if value == 1:
-            self.Message1.setText(self.welcome)
+            self.message1.setText(self.welcome)
         elif value == 2:
-            self.Message1.setText(self.winMessage)
+            self.message1.setText(self.win_message)
         elif value == 3:
-            self.Message1.setText(self.loseMessage)
+            self.message1.setText(self.lose_message)
 
         # Puts together the quit message.
         else:
