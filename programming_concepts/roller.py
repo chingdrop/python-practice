@@ -7,7 +7,7 @@ from random import randrange
 
 from programming_concepts.classes.graphics import GraphWin, Point
 from programming_concepts.classes.button import Button
-from programming_concepts.classes.dieview import DieView
+from programming_concepts.classes.dice import DieView
 
 
 def main():

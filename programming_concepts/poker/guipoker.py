@@ -4,7 +4,7 @@
 from programming_concepts.classes.graphics import *
 from programming_concepts.poker.pokerapp import PokerApp
 from programming_concepts.classes.button import Button
-from programming_concepts.classes.cdieview import ColorDieView
+from programming_concepts.classes.dice import ColorDieView
 
 
 class GraphicsInterface:
