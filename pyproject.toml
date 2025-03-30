@@ -10,9 +10,17 @@ version = "1.0.0"
 readme = "README.md"
 license = "MIT"
 dependencies = [
-    "python >=3.6, <3.12",
-    "click >=7.1.2, <9.0.0",
+    "click >=7.1.2",
 ]
 
 [project.urls]
 Repository = "https://github.com/chingdrop/python-practice"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages]
+find = { where = ["src"] }
+
+[tool.setuptools.package-dir]
+"" = "src"
