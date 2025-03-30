@@ -250,3 +250,12 @@ def chaos():
     for i in range(10):
         x = 3.9 * x * (1 - x)
         print(x)
+
+
+def square(x):
+    return x * x
+
+
+def distance(p1, p2):
+    dist = math.sqrt(square(p2.getX() - p1.getX()) + square(p2.getY() - p1.getY()))
+    return dist
